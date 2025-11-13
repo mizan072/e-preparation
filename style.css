@@ -1,119 +1,75 @@
-/* Base styles */
 body {
     font-family: 'Hind Siliguri', sans-serif;
-    background-color: #f0f9ff;
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Animations */
-.fade-in { animation: fadeIn 0.4s ease-in-out; }
-.slide-up { animation: slideUp 0.5s ease-out; }
+/* Animation Classes */
+.fade-in { animation: fadeIn 0.3s ease-in-out; }
+.slide-up { animation: slideUp 0.4s ease-out; }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-@keyframes slideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(15px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-/* Custom Scrollbar for Results List */
-.custom-scrollbar::-webkit-scrollbar { width: 6px; }
-.custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
-.custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+/* Scrollbar */
+.custom-scrollbar::-webkit-scrollbar { width: 5px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
 
-/* Start Screen Buttons (10, 20, All) */
-.quiz-length-btn {
-    padding: 1rem;
-    font-size: 0.875rem;
+/* Limit Buttons (Quantity selection) */
+.limit-btn {
+    padding: 10px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
     font-weight: 600;
-    color: #475569; /* slate-600 */
-    background-color: #f8fafc; /* slate-50 */
-    border: 1px solid #e2e8f0; /* slate-200 */
-    border-radius: 0.75rem;
-    transition: all 0.2s ease;
+    color: #64748b;
+    font-size: 0.9rem;
+    transition: all 0.2s;
 }
-.quiz-length-btn:hover {
-    background-color: #f1f5f9; /* slate-100 */
-    border-color: #cbd5e1; /* slate-300 */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-}
-.quiz-length-btn:active {
-    transform: scale(0.98);
+.limit-btn:hover { background: #f1f5f9; }
+.limit-btn.active {
+    background: #334155; /* slate-700 */
+    color: white;
+    border-color: #334155;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
 }
 
-
-/* Option Card Base Styles */
+/* Option Cards */
 .option-card {
     transition: all 0.2s ease;
     border: 2px solid transparent;
+    position: relative;
 }
 .option-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background-color: #f8fafc;
 }
 
-/* --- Immediate Feedback Styles --- */
-
-/* Base state for an option that has been graded (prevents re-clicking) */
-.option-card.disabled {
-    pointer-events: none;
-    opacity: 0.9; /* Keep it mostly visible so user can read it */
-}
-
-/* Correct Answer Style (Green) */
+/* --- PRACTICE MODE STYLES --- */
+/* Correct Answer */
 .option-card.correct-ui {
-    border-color: #22c55e; /* green-500 */
-    background-color: #f0fdf4; /* green-50 */
-    position: relative;
-    opacity: 1 !important;
+    border-color: #22c55e; background-color: #f0fdf4; color: #15803d;
 }
-/* Add Checkmark Icon via CSS */
-.option-card.correct-ui::after {
-    content: '\f00c'; /* FontAwesome Check ID */
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #22c55e; /* green-500 */
-    font-size: 1.2rem;
-}
-/* Style the letter circle (A, B, C, D) for correct answer */
-.option-card.correct-ui .option-letter {
-    background-color: #22c55e;
-    color: white;
-    border-color: #22c55e;
+.option-card.correct-ui .icon-box {
+    background-color: #22c55e; color: white; border-color: #22c55e;
 }
 
-/* Wrong Answer Style (Red) */
+/* Wrong Answer */
 .option-card.wrong-ui {
-    border-color: #ef4444; /* red-500 */
-    background-color: #fef2f2; /* red-50 */
-    position: relative;
-    opacity: 1 !important;
+    border-color: #ef4444; background-color: #fef2f2; color: #991b1b;
 }
-/* Add X Mark Icon via CSS */
-.option-card.wrong-ui::after {
-    content: '\f00d'; /* FontAwesome X-mark ID */
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #ef4444; /* red-500 */
-    font-size: 1.2rem;
-}
-/* Style the letter circle for wrong answer */
-.option-card.wrong-ui .option-letter {
-    background-color: #ef4444;
-    color: white;
-    border-color: #ef4444;
+.option-card.wrong-ui .icon-box {
+    background-color: #ef4444; color: white; border-color: #ef4444;
 }
 
+/* --- TEST MODE STYLES --- */
+/* Selected (Neutral Blue) */
+.option-card.selected-test {
+    border-color: #3b82f6; /* blue-500 */
+    background-color: #eff6ff; /* blue-50 */
+}
+.option-card.selected-test .icon-box {
+    background-color: #3b82f6; color: white; border-color: #3b82f6;
+}
 
+/* Disable interactions */
+.option-card.disabled { pointer-events: none; }
