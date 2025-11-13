@@ -1,91 +1,119 @@
-/* This file contains custom styles for the MCQ app.
-    It works WITH Tailwind, not instead of it.
-*/
-
+/* Base styles */
 body {
     font-family: 'Hind Siliguri', sans-serif;
-    background-color: #f0f9ff; /* Light blue/slate background */
-    -webkit-tap-highlight-color: transparent; /* Removes blue tap highlight on mobile */
+    background-color: #f0f9ff;
+    -webkit-tap-highlight-color: transparent;
 }
 
-/* Custom Animations */
-.fade-in {
-    animation: fadeIn 0.4s ease-in-out;
-}
-
-.slide-up {
-    animation: slideUp 0.5s ease-out;
-}
+/* Animations */
+.fade-in { animation: fadeIn 0.4s ease-in-out; }
+.slide-up { animation: slideUp 0.5s ease-out; }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-
 @keyframes slideUp {
     from { transform: translateY(20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
 
-/* Custom Scrollbar for Review Section */
-.custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
+/* Custom Scrollbar for Results List */
+.custom-scrollbar::-webkit-scrollbar { width: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Start Screen Buttons (10, 20, All) */
+.quiz-length-btn {
+    padding: 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #475569; /* slate-600 */
+    background-color: #f8fafc; /* slate-50 */
+    border: 1px solid #e2e8f0; /* slate-200 */
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
 }
-.custom-scrollbar::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
+.quiz-length-btn:hover {
+    background-color: #f1f5f9; /* slate-100 */
+    border-color: #cbd5e1; /* slate-300 */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #cbd5e1; /* slate-300 */
-    border-radius: 4px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8; /* slate-400 */
+.quiz-length-btn:active {
+    transform: scale(0.98);
 }
 
-/* Option Selection Styles */
+
+/* Option Card Base Styles */
 .option-card {
     transition: all 0.2s ease;
     border: 2px solid transparent;
 }
-
-/* Tailwind's hover: classes are good, but this ensures
-   a smooth transition even for non-Tailwind properties.
-*/
 .option-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.option-card.selected {
-    border-color: #0ea5e9; /* sky-500 */
-    background-color: #f0f9ff; /* sky-50 */
-    position: relative;
+/* --- Immediate Feedback Styles --- */
+
+/* Base state for an option that has been graded (prevents re-clicking) */
+.option-card.disabled {
+    pointer-events: none;
+    opacity: 0.9; /* Keep it mostly visible so user can read it */
 }
 
-/* This adds the checkmark icon using Font Awesome.
-   We target the 'selected' class added by JavaScript.
-*/
-.option-card.selected::after {
-    content: '\f058'; /* FontAwesome Check Circle */
+/* Correct Answer Style (Green) */
+.option-card.correct-ui {
+    border-color: #22c55e; /* green-500 */
+    background-color: #f0fdf4; /* green-50 */
+    position: relative;
+    opacity: 1 !important;
+}
+/* Add Checkmark Icon via CSS */
+.option-card.correct-ui::after {
+    content: '\f00c'; /* FontAwesome Check ID */
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     position: absolute;
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    color: #0ea5e9; /* sky-500 */
+    color: #22c55e; /* green-500 */
     font-size: 1.2rem;
 }
+/* Style the letter circle (A, B, C, D) for correct answer */
+.option-card.correct-ui .option-letter {
+    background-color: #22c55e;
+    color: white;
+    border-color: #22c55e;
+}
 
-/* Result Styles (used in JS, but defined here) */
-.correct-answer {
-    background-color: #dcfce7; /* Green-100 */
-    border: 1px solid #22c55e;
-    color: #15803d;
+/* Wrong Answer Style (Red) */
+.option-card.wrong-ui {
+    border-color: #ef4444; /* red-500 */
+    background-color: #fef2f2; /* red-50 */
+    position: relative;
+    opacity: 1 !important;
 }
-.wrong-answer {
-    background-color: #fee2e2; /* Red-100 */
-    border: 1px solid #ef4444;
-    color: #b91c1c;
+/* Add X Mark Icon via CSS */
+.option-card.wrong-ui::after {
+    content: '\f00d'; /* FontAwesome X-mark ID */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ef4444; /* red-500 */
+    font-size: 1.2rem;
 }
+/* Style the letter circle for wrong answer */
+.option-card.wrong-ui .option-letter {
+    background-color: #ef4444;
+    color: white;
+    border-color: #ef4444;
+}
+
+
