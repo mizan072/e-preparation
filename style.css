@@ -1,0 +1,91 @@
+/* This file contains custom styles for the MCQ app.
+    It works WITH Tailwind, not instead of it.
+*/
+
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #f0f9ff; /* Light blue/slate background */
+    -webkit-tap-highlight-color: transparent; /* Removes blue tap highlight on mobile */
+}
+
+/* Custom Animations */
+.fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Custom Scrollbar for Review Section */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1; /* slate-300 */
+    border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8; /* slate-400 */
+}
+
+/* Option Selection Styles */
+.option-card {
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+/* Tailwind's hover: classes are good, but this ensures
+   a smooth transition even for non-Tailwind properties.
+*/
+.option-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.option-card.selected {
+    border-color: #0ea5e9; /* sky-500 */
+    background-color: #f0f9ff; /* sky-50 */
+    position: relative;
+}
+
+/* This adds the checkmark icon using Font Awesome.
+   We target the 'selected' class added by JavaScript.
+*/
+.option-card.selected::after {
+    content: '\f058'; /* FontAwesome Check Circle */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0ea5e9; /* sky-500 */
+    font-size: 1.2rem;
+}
+
+/* Result Styles (used in JS, but defined here) */
+.correct-answer {
+    background-color: #dcfce7; /* Green-100 */
+    border: 1px solid #22c55e;
+    color: #15803d;
+}
+.wrong-answer {
+    background-color: #fee2e2; /* Red-100 */
+    border: 1px solid #ef4444;
+    color: #b91c1c;
+}
