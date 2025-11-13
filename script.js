@@ -1,233 +1,243 @@
-// --- State Variables ---
-let fullQuizData = []; // All questions from JSON
-let activeQuizData = []; // The selected, shuffled questions for the current test
-let currentQuestionIndex = 0;
+// --- Global State ---
+let fullData = [];
+let activeQuestions = [];
+let currentIndex = 0;
 let score = 0;
-let userAnswers = [];
+let userAnswers = []; // Stores { selected: string, correct: string }
+let selectedLimit = 10; // Default
+let currentMode = 'practice'; // 'practice' or 'test'
 
 // --- DOM Elements ---
-const startScreen = document.getElementById('start-screen');
-const quizScreen = document.getElementById('quiz-screen');
-const resultScreen = document.getElementById('result-screen');
-const headerBar = document.getElementById('header-bar');
-const questionText = document.getElementById('question-text');
-const optionsContainer = document.getElementById('options-container');
-const nextBtn = document.getElementById('next-btn');
-const currentNumEl = document.getElementById('current-num');
-const totalNumEl = document.getElementById('total-num');
-const progressBar = document.getElementById('progress-bar');
-const totalQCount = document.getElementById('total-q-count');
+const screens = {
+    start: document.getElementById('start-screen'),
+    quiz: document.getElementById('quiz-screen'),
+    result: document.getElementById('result-screen')
+};
+const els = {
+    headerBar: document.getElementById('header-bar'),
+    question: document.getElementById('question-text'),
+    options: document.getElementById('options-container'),
+    nextBtn: document.getElementById('next-btn'),
+    currentNum: document.getElementById('current-num'),
+    totalNum: document.getElementById('total-num'),
+    progress: document.getElementById('progress-bar'),
+    modeBadge: document.getElementById('mode-badge'),
+    dbStatus: document.getElementById('db-status')
+};
 
-// --- Initialize ---
-window.addEventListener('DOMContentLoaded', () => {
-    fetch('questions.json')
-        .then(response => {
-            if (!response.ok) throw new Error("HTTP error ".concat(response.status));
-            return response.json();
-        })
-        .then(data => {
-            fullQuizData = data;
-            if(totalQCount) totalQCount.textContent = "মোট ".concat(convertToBanglaDigits(fullQuizData.length), "টি প্রশ্ন লোড হয়েছে।");
-        })
-        .catch(error => {
-            console.error('Error loading questions:', error);
-            if(totalQCount) totalQCount.textContent = "প্রশ্ন লোড করতে ব্যর্থ।";
-            alert("Error: Could not load questions.json. Ensure you are running on a Local Server (like VS Code Live Server) and the file exists.");
-        });
+// --- Initialization ---
+window.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const res = await fetch('questions.json');
+        if (!res.ok) throw new Error("Failed to load");
+        fullData = await res.json();
+        els.dbStatus.textContent = `ডেটাবেসে মোট ${convertToBangla(fullData.length)} টি প্রশ্ন আছে`;
+    } catch (err) {
+        console.error(err);
+        els.dbStatus.textContent = "প্রশ্ন লোড করতে সমস্যা হয়েছে।";
+        alert("Error: Run this on a Local Server to load JSON.");
+    }
 });
 
-// --- Helper Functions ---
-function convertToBanglaDigits(number) {
-    const english = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    const bangla = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-    return number.toString().split('').map(c => bangla[english.indexOf(c)] || c).join('');
+// --- UI Functions ---
+function setLimit(num, btn) {
+    selectedLimit = num;
+    // Update UI classes
+    document.querySelectorAll('.limit-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 }
 
-// Fisher-Yates Shuffle Algorithm
-function shuffleArray(array) {
-    let newArr = [...array]; // Create a copy
-    for (let i = newArr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
-    }
-    return newArr;
+function convertToBangla(num) {
+    const bn = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
+    return num.toString().split('').map(c => bn[c] || c).join('');
 }
 
-// --- Main App Functions ---
-function startQuiz(numQuestions) {
-    if (fullQuizData.length === 0) {
-        alert("Data loading... Please wait a moment.");
-        return;
-    }
+function shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
+
+// --- Quiz Logic ---
+function initiateQuiz() {
+    if (!fullData.length) return alert("Please wait for data to load.");
+
+    // 1. Get Mode
+    const modeInput = document.querySelector('input[name="quiz_mode"]:checked');
+    currentMode = modeInput ? modeInput.value : 'practice';
+
+    // 2. Prepare Data
+    const shuffled = shuffle([...fullData]);
+    activeQuestions = selectedLimit === -1 ? shuffled : shuffled.slice(0, selectedLimit);
     
-    // Shuffle and select questions
-    const shuffledData = shuffleArray(fullQuizData);
-    
-    if (numQuestions === -1 || numQuestions > shuffledData.length) {
-        activeQuizData = shuffledData;
-    } else {
-        activeQuizData = shuffledData.slice(0, numQuestions);
-    }
-    
-    // Reset State
-    currentQuestionIndex = 0;
+    // 3. Reset State
+    currentIndex = 0;
     score = 0;
-    userAnswers = new Array(activeQuizData.length).fill(null);
+    userAnswers = new Array(activeQuestions.length).fill(null);
 
-    // Update UI
-    totalNumEl.textContent = activeQuizData.length;
-    startScreen.style.display = 'none';
-    quizScreen.style.display = 'flex';
-    headerBar.style.display = 'block';
+    // 4. Setup UI
+    screens.start.classList.add('hidden');
+    screens.quiz.classList.remove('hidden');
+    screens.quiz.classList.add('opacity-100', 'flex'); // Ensure flex display
+    els.headerBar.classList.remove('hidden');
     
-    setTimeout(() => quizScreen.classList.remove('opacity-0'), 50);
+    // Setup Badge
+    if(currentMode === 'practice') {
+        els.modeBadge.textContent = "PRACTICE";
+        els.modeBadge.className = "text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide bg-sky-100 text-sky-600";
+    } else {
+        els.modeBadge.textContent = "TEST MODE";
+        els.modeBadge.className = "text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide bg-purple-100 text-purple-600";
+    }
+
     loadQuestion();
 }
 
 function loadQuestion() {
-    const currentData = activeQuizData[currentQuestionIndex];
+    const data = activeQuestions[currentIndex];
     
-    // Update Header
-    currentNumEl.textContent = currentQuestionIndex + 1;
-    progressBar.style.width = "".concat(((currentQuestionIndex) / activeQuizData.length) * 100, "%");
+    // Update Headers
+    els.currentNum.textContent = currentIndex + 1;
+    els.totalNum.textContent = activeQuestions.length;
+    els.progress.style.width = `${((currentIndex) / activeQuestions.length) * 100}%`;
+    
+    // Render Question
+    els.question.textContent = data.question;
+    els.options.innerHTML = '';
 
-    // Update Question
-    questionText.textContent = currentData.question;
-    
-    // Clear & Generate Options
-    optionsContainer.innerHTML = '';
-    
-    currentData.options.forEach((option, index) => {
+    // Render Options
+    data.options.forEach((opt, idx) => {
         const btn = document.createElement('div');
-        // Note: We use dataset to store the option text for easy checking
-        btn.dataset.option = option;
-        btn.className = "option-card w-full p-4 bg-white rounded-xl border border-slate-200 text-slate-700 cursor-pointer flex items-center gap-3 text-left";
+        btn.className = `option-card w-full p-4 bg-white rounded-xl border border-slate-200 text-slate-700 cursor-pointer flex items-center gap-3 text-left mb-3 shadow-sm`;
         
         btn.innerHTML = `
-            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center text-xs font-bold shrink-0 border border-slate-200 option-letter">
-                ${String.fromCharCode(65 + index)}
+            <div class="icon-box w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center text-xs font-bold shrink-0 border border-slate-200 transition-colors">
+                ${String.fromCharCode(65 + idx)}
             </div>
-            <span class="text-sm md:text-base font-medium">${option}</span>
+            <span class="text-sm font-medium leading-snug select-none">${opt}</span>
         `;
         
-        // Pass the full data object to the handler
-        btn.onclick = () => selectOption(option, btn);
-        optionsContainer.appendChild(btn);
+        btn.onclick = () => handleOptionClick(opt, btn);
+        els.options.appendChild(btn);
     });
 
     // Reset Next Button
-    nextBtn.disabled = true;
-    nextBtn.className = "w-full bg-slate-200 text-slate-400 font-bold py-3.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 cursor-not-allowed";
-    
-    if (currentQuestionIndex === activeQuizData.length - 1) {
-        nextBtn.innerHTML = 'ফলাফল দেখুন <i class="fa-solid fa-flag-checkered ml-2"></i>';
-    } else {
-        nextBtn.innerHTML = 'পরবর্তী প্রশ্ন <i class="fa-solid fa-arrow-right ml-2"></i>';
-    }
+    els.nextBtn.disabled = true;
+    els.nextBtn.className = "w-full bg-slate-200 text-slate-400 font-bold py-3.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 cursor-not-allowed";
+    els.nextBtn.innerHTML = currentIndex === activeQuestions.length - 1 
+        ? 'ফলাফল দেখুন <i class="fa-solid fa-flag-checkered ml-2"></i>' 
+        : 'পরবর্তী <i class="fa-solid fa-arrow-right ml-2"></i>';
 
     // Animation
-    questionText.classList.add('fade-in');
-    optionsContainer.classList.add('slide-up');
+    els.question.classList.add('fade-in');
+    els.options.classList.add('slide-up');
     setTimeout(() => {
-        questionText.classList.remove('fade-in');
-        optionsContainer.classList.remove('slide-up');
-    }, 500);
+        els.question.classList.remove('fade-in');
+        els.options.classList.remove('slide-up');
+    }, 400);
 }
 
-function selectOption(selectedOption, btnElement) {
-    const currentData = activeQuizData[currentQuestionIndex];
-    const correctAnswer = currentData.answer;
-    const isCorrect = (selectedOption === correctAnswer);
+function handleOptionClick(selectedOpt, btn) {
+    // Prevent re-clicking if already answered (Practice) or just update selection (Test)
+    // However, simplest logic: Test mode allows changing until 'Next', Practice mode locks immediately.
+    
+    const currentQ = activeQuestions[currentIndex];
+    
+    if (currentMode === 'practice') {
+        // Logic: Lock immediately, Show Answer
+        if (els.options.classList.contains('locked')) return; // Prevent multi-clicks
+        els.options.classList.add('locked');
 
-    // Disable all options
-    Array.from(optionsContainer.children).forEach(child => {
-        child.classList.add('disabled');
-        // Find the correct answer and highlight it
-        if (child.dataset.option === correctAnswer) {
-            child.classList.add('correct-ui');
-        }
-    });
+        const isCorrect = selectedOpt === currentQ.answer;
+        if (isCorrect) score++;
 
-    // Update score and selected button UI
-    if (isCorrect) {
-        score++;
-        // 'correct-ui' was already added
-    } else {
-        btnElement.classList.add('wrong-ui');
+        // UI Updates
+        Array.from(els.options.children).forEach(child => {
+            child.classList.add('disabled'); // Disable all
+            const optText = child.querySelector('span').innerText;
+            
+            if (optText === currentQ.answer) {
+                child.classList.add('correct-ui'); // Always highlight correct
+            }
+            if (optText === selectedOpt && !isCorrect) {
+                child.classList.add('wrong-ui'); // Highlight wrong selected
+            }
+        });
+    } 
+    else {
+        // Logic: Test Mode - Just Highlight selection, don't show answer
+        Array.from(els.options.children).forEach(child => {
+            child.classList.remove('selected-test');
+            child.querySelector('.icon-box').className = "icon-box w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center text-xs font-bold shrink-0 border border-slate-200 transition-colors";
+        });
+        
+        btn.classList.add('selected-test');
+        // Do not update score here, calculate at end
     }
 
-    // Store answer for review
-    userAnswers[currentQuestionIndex] = { selected: selectedOption, correct: correctAnswer };
+    // Save Answer
+    userAnswers[currentIndex] = { selected: selectedOpt, correct: currentQ.answer };
 
-    // Enable Next Button
-    nextBtn.disabled = false;
-    nextBtn.className = "w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-3.5 rounded-xl shadow-md shadow-sky-200 transition-all duration-200 flex items-center justify-center gap-2 transform active:scale-[0.98]";
+    // Enable Next
+    els.nextBtn.disabled = false;
+    els.nextBtn.className = currentMode === 'practice'
+        ? "w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-3.5 rounded-xl shadow-md shadow-sky-200 transition-all duration-200 flex items-center justify-center gap-2 transform active:scale-[0.98]"
+        : "w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3.5 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2 transform active:scale-[0.98]";
 }
 
 function nextQuestion() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < activeQuizData.length) {
+    els.options.classList.remove('locked'); // Reset lock
+    currentIndex++;
+    
+    if (currentIndex < activeQuestions.length) {
         loadQuestion();
     } else {
-        showResults();
+        finishQuiz();
     }
 }
 
-function showResults() {
-    quizScreen.style.display = 'none';
-    headerBar.style.display = 'none';
-    resultScreen.style.display = 'flex';
-    resultScreen.classList.remove('hidden');
+function finishQuiz() {
+    // Calculate Test Mode Score
+    if (currentMode === 'test') {
+        score = 0;
+        userAnswers.forEach(ans => {
+            if (ans && ans.selected === ans.correct) score++;
+        });
+    }
 
-    // Calculate score
-    const percentage = Math.round((score / activeQuizData.length) * 100);
-    document.getElementById('score-percent').textContent = "".concat(percentage, "%");
-    document.getElementById('score-fraction').textContent = "".concat(score, "/").concat(activeQuizData.length);
+    screens.quiz.classList.add('hidden');
+    screens.quiz.classList.remove('flex');
+    els.headerBar.classList.add('hidden');
+    screens.result.classList.remove('hidden');
+    screens.result.classList.add('flex');
 
-    // Score text
-    const scoreText = document.getElementById('score-text');
-    if (percentage === 100) scoreText.textContent = "অসাধারণ! সব উত্তর সঠিক হয়েছে।";
-    else if (percentage >= 80) scoreText.textContent = "খুবই ভালো! চালিয়ে যান।";
-    else if (percentage >= 50) scoreText.textContent = "ভালো প্রচেষ্টা, আরও ভালো হতে পারে।";
-    else scoreText.textContent = "হতাশ হবেন না, আবার চেষ্টা করুন।";
+    // Update Stats
+    const percent = Math.round((score / activeQuestions.length) * 100);
+    document.getElementById('r-score').textContent = `${percent}%`;
+    document.getElementById('r-correct').textContent = score;
+    document.getElementById('r-wrong').textContent = activeQuestions.length - score;
 
     // Generate Review
-    const reviewContainer = document.getElementById('review-container');
-    reviewContainer.innerHTML = '';
+    const container = document.getElementById('review-container');
+    container.innerHTML = '';
 
-    activeQuizData.forEach((q, idx) => {
-        const userAnswer = userAnswers[idx]; // { selected: '...', correct: '...' }
-        const isCorrect = userAnswer.selected === userAnswer.correct;
+    activeQuestions.forEach((q, i) => {
+        const ans = userAnswers[i];
+        const userSel = ans ? ans.selected : null;
+        const isRight = userSel === q.answer;
         
-        const reviewItem = document.createElement('div');
-        reviewItem.className = "bg-slate-50 p-4 rounded-xl text-sm border border-slate-100";
+        const item = document.createElement('div');
+        item.className = "bg-slate-50 p-4 rounded-lg border border-slate-100 text-sm";
         
-        let statusIcon = isCorrect 
-            ? '<i class="fa-solid fa-check text-green-500"></i>' 
-            : '<i class="fa-solid fa-xmark text-red-500"></i>';
-        
-        reviewItem.innerHTML = `
+        item.innerHTML = `
             <div class="flex gap-3 mb-2">
-                <span class="font-bold text-slate-400 text-xs pt-1">#${idx + 1}</span>
+                <span class="font-bold text-slate-400 text-xs pt-0.5">Q${i+1}</span>
                 <p class="font-semibold text-slate-800 leading-tight flex-1">${q.question}</p>
-                <div class="shrink-0">${statusIcon}</div>
+                <i class="fa-solid ${isRight ? 'fa-check text-green-500' : 'fa-xmark text-red-500'} text-lg"></i>
             </div>
-            <div class="pl-6 space-y-1">
-                ${!isCorrect ? `
-                    <div class="text-red-600 text-xs font-medium flex items-start gap-2">
-                        <span class="opacity-70">আপনার উত্তর:</span> ${userAnswer.selected || "উত্তর দেওয়া হয়নি"}
-                    </div>
-                ` : ''}
-                <div class="text-green-600 text-xs font-medium flex items-start gap-2">
-                    <span class="opacity-70">সঠিক উত্তর:</span> ${userAnswer.correct}
-                </div>
+            <div class="pl-7 space-y-1">
+                ${!isRight ? `<div class="text-red-600 text-xs font-medium"><span class="opacity-60">You:</span> ${userSel || 'Skipped'}</div>` : ''}
+                <div class="text-green-600 text-xs font-medium"><span class="opacity-60">Correct:</span> ${q.answer}</div>
             </div>
         `;
-        reviewContainer.appendChild(reviewItem);
+        container.appendChild(item);
     });
-}
-
-function restartQuiz() {
-    resultScreen.style.display = 'none';
-    startScreen.style.display = 'flex';
 }
