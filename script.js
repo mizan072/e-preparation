@@ -75,7 +75,7 @@ const nextQuestionButton = document.getElementById('next-question-button');
 const feedbackIcon = document.getElementById('feedback-icon');
 
 // Results
-const resultsHeader = document.getElementById('results-header');
+const resultsHeader = document.getElementById('results-header-text');
 const finalScoreText = document.getElementById('final-score-text');
 const finalPercentageText = document.getElementById('final-percentage-text');
 const wordsToReviewContainer = document.getElementById('words-to-review-container');
@@ -590,22 +590,34 @@ function showQuizComplete() {
     }
     
     // "Continue" Button logic
-    if (currentCategory === 'recentgk' || currentCategory === 'special') {
+     if (currentCategory === 'recentgk' || currentCategory === 'special') {
         continueButton.textContent = "Back to Categories";
-        continueButton.onclick = loadWelcome;
     } else {
         const nextChunkIndex = catData.currentChunkIndex + 1;
         if ((nextChunkIndex * WORDS_PER_CHUNK) >= catData.list.length) {
             continueButton.textContent = "All Lessons Complete! Back to Categories";
-            continueButton.onclick = loadWelcome;
         } else {
             continueButton.textContent = `Continue to Next Lesson`;
-            continueButton.onclick = () => loadLearnSection(nextChunkIndex);
         }
     }
     
     lucide.createIcons();
     showSection('results');
+}
+
+function continueToNext() {
+    const catData = vocabData[currentCategory];
+    if (currentCategory === 'recentgk' || currentCategory === 'special') {
+        loadWelcome();
+        return;
+    }
+
+    const nextChunkIndex = (catData.currentChunkIndex || 0) + 1;
+    if ((nextChunkIndex * WORDS_PER_CHUNK) >= catData.list.length) {
+        loadWelcome();
+    } else {
+        loadLearnSection(nextChunkIndex);
+    }
 }
 
 
@@ -935,6 +947,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadWelcome();
 
         mainMenuButton.addEventListener('click', loadWelcome);
+        continueButton.addEventListener('click', continueToNext);
         dictionaryButton.addEventListener('click', () => { loadDictionary(); showSection('dictionary'); });
         statsButton.addEventListener('click', loadStatsPage);
         aboutButton.addEventListener('click', () => showSection('about'));
