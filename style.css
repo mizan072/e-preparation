@@ -237,12 +237,16 @@ body {
 
 /* --- RESULTS SCREEN --- */
 #results-section {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    display: none;
     height: 100%;
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+
+#results-section.active {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .results-container {
@@ -361,7 +365,7 @@ body {
     #words-to-review-list-wrapper {
        /* The flex-grow property handles this now */
     }
-
+    
     .continue-button-wrapper {
         padding: 1rem;
         position: fixed;
