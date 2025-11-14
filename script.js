@@ -60,7 +60,7 @@ const resetProgressButton = document.getElementById('reset-progress-button');
 const learnHeader = document.getElementById('learn-header');
 const learnContainer = document.getElementById('learn-container');
 const startTestButton = document.getElementById('start-test-button');
-const skipTestButton = document.getElementById('skip-test-button'); // New button
+const skipTestButton = document.getElementById('skip-test-button'); // New Button
 
 // Test
 const quizProgressText = document.getElementById('quiz-progress-text');
@@ -131,15 +131,32 @@ function loadWelcome() {
     
     const categories = [
         { id: 'gre', title: 'GRE 333', description: 'The essential 333 high-frequency words for the GRE.', bn_description: 'চাকরির পরীক্ষার জন্য অপরিহার্য ৩৩৩টি হাই-ফ্রিকোয়েন্সি ইংরেজি শব্দ।', icon: 'graduation-cap', color: 'text-blue-500' },
-        { id: 'previous', title: 'Previous Questions', description: 'Bank & BCS vocabulary from last 15 years.', bn_description: 'বিগত ১৫ বছরের ব্যাংক ও বিসিএস পরীক্ষার প্রশ্ন।', icon: 'history', color: 'text-purple-500' },
+        { id: 'previous', title: 'Previous Questions', description: 'Bank & BCS vocabulary from last 15 years.', bn_description: 'বিগত ১৫ বছরের ব্যাংক ও বিসিএস পরীক্ষার প্রশ্ন থেকে বাছাইকৃত শব্দভাণ্ডার।', icon: 'history', color: 'text-purple-500' },
         { id: 'recentgk', title: 'Recent GK', description: 'Daily general knowledge updates from newspapers.', bn_description: 'সাম্প্রতিক সাধারণ জ্ঞানের নিয়মিত আপডেট।', icon: 'globe-2', color: 'text-sky-500' }
     ];
 
     categories.forEach(cat => {
         const catData = vocabData[cat.id];
-        const masteredCount = catData.words ? catData.words.filter(w => w.strength >= 10).length : 0;
         const totalCount = catData.list.length;
-        const percentage = totalCount > 0 ? Math.round((masteredCount / totalCount) * 100) : 0;
+        
+        // --- PROGRESS FIX ---
+        // Calculate progress based on accumulated strength vs max possible strength
+        let totalStrength = 0;
+        let startedCount = 0;
+        
+        if (catData.words) {
+            catData.words.forEach(w => {
+                totalStrength += (w.strength || 0);
+                if (w.strength > 0) startedCount++;
+            });
+        }
+
+        // Assuming max strength per word is 12
+        const maxPossibleStrength = totalCount * 12; 
+        const percentage = maxPossibleStrength > 0 ? Math.round((totalStrength / maxPossibleStrength) * 100) : 0;
+
+        // Calculate Mastered count just for logic (Chunking)
+        const masteredCount = catData.words ? catData.words.filter(w => w.strength >= 10).length : 0;
 
         const card = document.createElement('div');
         card.className = "group bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-300 cursor-pointer relative overflow-hidden";
@@ -155,7 +172,7 @@ function loadWelcome() {
             <p class="lang-bn text-slate-500 dark:text-slate-500 text-sm mb-5">${cat.bn_description}</p>
             
             <div class="flex items-center justify-between text-xs font-semibold text-slate-500 dark:text-slate-400 mb-2">
-                <span>Progress</span>
+                <span>Learning Score</span>
                 <span>${percentage}%</span>
             </div>
             <div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2">
@@ -169,12 +186,14 @@ function loadWelcome() {
                 document.getElementById('recentgk-total-questions').textContent = `${totalCount} Questions Available`;
                 showSection('recentgk');
             } else {
+                // Logic to find next chunk
                 const nextChunkIndex = Math.floor(masteredCount / WORDS_PER_CHUNK);
                 if (nextChunkIndex * WORDS_PER_CHUNK >= totalCount && totalCount > 0) {
-                    alert("Congratulations! You have studied all words in this category.");
-                    return;
+                     // If mostly done, just show the last chunk or the one they are working on
+                    loadLearnSection(Math.min(nextChunkIndex, Math.floor((totalCount - 1) / WORDS_PER_CHUNK)));
+                } else {
+                    loadLearnSection(nextChunkIndex);
                 }
-                loadLearnSection(nextChunkIndex);
             }
         });
 
@@ -193,16 +212,19 @@ function resetQuizState() {
     quizQuestion.textContent = '';
     quizQuestionBengali.textContent = '';
     
+    // Button text updates based on mode
     nextQuestionButton.innerHTML = isTestMode ? 'Next Question' : 'Next';
     nextQuestionButton.disabled = false;
     nextQuestionButton.classList.remove('opacity-50', 'cursor-not-allowed');
     
     if (isTestMode) {
+        // In Test Mode, disable Next until an option is selected
         nextQuestionButton.disabled = true; 
         nextQuestionButton.classList.add('opacity-50', 'cursor-not-allowed');
     } else {
+        // In Practice Mode, disable Next until Answered
         nextQuestionButton.innerHTML = 'Next';
-        nextQuestionButton.disabled = true; // In practice mode, disable until answered
+        nextQuestionButton.disabled = true; 
         nextQuestionButton.classList.add('opacity-50', 'cursor-not-allowed');
     }
 }
@@ -239,18 +261,18 @@ function loadLearnSection(chunkIndex) {
         learnContainer.appendChild(card);
     });
 
-    // Manage Button Visibility
-    // If it's the last chunk, hide "Continue Learning" button
+    // --- BUTTONS: TEST YOURSELF vs CONTINUE ---
     const nextChunkIndex = chunkIndex + 1;
+    // Check if there is a next chunk
     if ((nextChunkIndex * WORDS_PER_CHUNK) >= catData.list.length) {
+        // Last chunk: Hide skip button
         skipTestButton.style.display = 'none';
-        // Make "Test Yourself" take full width
         startTestButton.parentElement.classList.remove('grid-cols-2', 'sm:grid-cols-2');
         startTestButton.parentElement.classList.add('grid-cols-1');
     } else {
+        // Not last chunk: Show skip button
         skipTestButton.style.display = 'flex';
         startTestButton.parentElement.classList.add('grid-cols-1', 'sm:grid-cols-2');
-        // Assign click handler for Skip button
         skipTestButton.onclick = () => {
              loadLearnSection(nextChunkIndex);
              window.scrollTo(0, 0);
@@ -282,8 +304,6 @@ function startTest() {
     showSection('test');
 }
 
-// ... (Rest of the logic: loadQuestion, createOptionButton, etc. stays same) ...
-
 function loadQuestion() {
     if (currentQuizQuestionIndex >= wordsInCurrentChunk.length) {
         showQuizComplete();
@@ -298,11 +318,14 @@ function loadQuestion() {
     }
     
     const currentItem = wordsInCurrentChunk[currentQuizQuestionIndex];
+
+    // Slide Animation
     const card = document.querySelector('#test-section .bg-white');
     card.classList.remove('question-slide-in');
-    void card.offsetWidth; 
+    void card.offsetWidth; // trigger reflow
     card.classList.add('question-slide-in');
 
+    // --- GK Logic ---
     if (currentCategory === 'recentgk') {
         quizQuestion.textContent = '';
         quizQuestionBengali.textContent = currentItem.question;
@@ -315,6 +338,7 @@ function loadQuestion() {
         return;
     }
 
+    // --- Vocab Logic ---
     const currentWord = currentItem;
     const hasSynonym = currentWord.english && currentWord.english.trim() !== '';
     const quizType = !hasSynonym
@@ -412,6 +436,7 @@ function checkAnswer(selectedButton) {
     if (isAnswered) return;
     isAnswered = true;
 
+    // Unlock Next Button in Practice Mode
     nextQuestionButton.disabled = false;
     nextQuestionButton.classList.remove('opacity-50', 'cursor-not-allowed');
 
@@ -420,6 +445,7 @@ function checkAnswer(selectedButton) {
     const currentWord = wordsInCurrentChunk[currentQuizQuestionIndex];
     const wordInMasterList = vocabData[currentCategory].words.find(w => w.id === currentWord.id);
 
+    // Show visual feedback immediately in Practice Mode
     allButtons.forEach(button => {
         button.classList.add('disabled');
         if (button.dataset.correct === 'true') {
@@ -451,6 +477,7 @@ function checkAnswer(selectedButton) {
         feedbackText.className = "text-2xl font-bold text-red-600 dark:text-red-400";
         feedbackIcon.innerHTML = `<i data-lucide="x-circle" class="w-8 h-8 text-red-500"></i>`;
         
+        // Distinguish between GK and Vocab for correct answer display
         let correctAnswerText;
         if (currentCategory === 'recentgk') {
             correctAnswerText = currentWord.answer;
@@ -473,6 +500,7 @@ function checkAnswer(selectedButton) {
     updateQuizStats();
 }
 
+// --- TEST MODE: Silent Logic ---
 function recordTestAnswerAndAdvance() {
     if (!selectedTestAnswer) return; 
 
@@ -484,6 +512,7 @@ function recordTestAnswerAndAdvance() {
         quizScores.correct++;
         if (wordInMasterList) {
             wordInMasterList.strength = Math.min(12, wordInMasterList.strength + 1);
+            wordInMasterList.lastReviewed = new Date().toISOString();
         }
     } else {
         quizScores.incorrect++;
@@ -494,6 +523,7 @@ function recordTestAnswerAndAdvance() {
         }
     }
 
+    // No visual feedback. Immediately advance.
     currentQuizQuestionIndex++;
     selectedTestAnswer = null; 
     updateQuizStats(); 
@@ -515,6 +545,7 @@ function showQuizComplete() {
 
     saveProgress();
 
+    // Study Streak Logic
     const today = new Date().toISOString().split('T')[0];
     let studyHistory = JSON.parse(localStorage.getItem(STUDY_HISTORY_KEY) || '[]');
     if (!studyHistory.includes(today)) {
@@ -558,7 +589,7 @@ function showQuizComplete() {
         wordsToReviewList.innerHTML = `<div class="text-center p-6 text-slate-500"><i data-lucide="check-circle" class="w-12 h-12 mx-auto text-green-500 mb-2"></i><p>Perfect score! Nothing to review.</p></div>`;
     }
     
-    // "Continue" on Results screen logic
+    // "Continue" Button logic
     if (currentCategory === 'recentgk' || currentCategory === 'special') {
         continueButton.textContent = "Back to Categories";
         continueButton.onclick = loadWelcome;
@@ -633,9 +664,8 @@ function resetProgress() {
     }
 }
 
-// ... (UI Helpers, Stats, Initialization same as before) ...
-
 // --- 5. UI HELPERS ---
+
 function loadDictionary() {
     const allVocab = [...vocabData.gre.list, ...vocabData.previous.list];
     allVocab.sort((a, b) => a.word.localeCompare(b.word));
@@ -700,6 +730,30 @@ function renderMasteryChart() {
     const mastered = allWords.filter(w => w.strength >= 10).length;
     const learning = allWords.filter(w => w.strength > 0 && w.strength < 10).length;
     const notSeen = allWords.length - mastered - learning;
+    const totalCount = allWords.length;
+
+    // --- Donut Chart Plugin for Center Text ---
+    const centerTextPlugin = {
+        id: 'centerText',
+        afterDraw(chart) {
+            const { ctx } = chart;
+            ctx.save();
+            const x = chart.getDatasetMeta(0).data[0].x;
+            const y = chart.getDatasetMeta(0).data[0].y;
+            
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            ctx.font = 'bold 28px Inter';
+            ctx.fillStyle = htmlElement.classList.contains('dark') ? '#FFF' : '#1e293b';
+            ctx.fillText(totalCount, x, y - 10);
+            
+            ctx.font = '500 12px Inter';
+            ctx.fillStyle = '#64748b'; 
+            ctx.fillText('Total Words', x, y + 20);
+            ctx.restore();
+        }
+    };
 
     const ctx = document.getElementById('mastery-chart').getContext('2d');
     if (masteryChart) masteryChart.destroy();
@@ -717,7 +771,7 @@ function renderMasteryChart() {
             }]
         },
         options: {
-            cutout: '70%',
+            cutout: '75%',
             responsive: true,
             plugins: { 
                 legend: { 
@@ -730,7 +784,8 @@ function renderMasteryChart() {
                     } 
                 }
             }
-        }
+        },
+        plugins: [centerTextPlugin]
     });
 }
 
@@ -764,20 +819,67 @@ function createDifficultWordsTest() {
     }
 }
 
-// Placeholders for streak logic (simplified)
 function calculateStudyStreak() {
     const studyHistory = JSON.parse(localStorage.getItem(STUDY_HISTORY_KEY) || '[]');
     if (studyHistory.length === 0) return 0;
     studyHistory.sort((a, b) => new Date(b) - new Date(a));
+
     const today = new Date();
+    const todayStr = today.toISOString().split('T')[0];
     const lastStudyDay = new Date(studyHistory[0]);
+
     const diffDays = (today.getTime() - lastStudyDay.getTime()) / (1000 * 3600 * 24);
+    
     if (diffDays > 1.5) return 0;
-    // Simple streak logic
-    return studyHistory.length; 
+    
+    let streak = 0;
+    let currentDay = today;
+    
+    if (studyHistory[0] !== todayStr) {
+        currentDay.setDate(today.getDate() - 1);
+    }
+    
+    for (const dateStr of studyHistory) {
+        const expectedDateStr = currentDay.toISOString().split('T')[0];
+        if (dateStr === expectedDateStr) {
+            streak++;
+            currentDay.setDate(currentDay.getDate() - 1);
+        } else if (new Date(dateStr) < new Date(expectedDateStr)) {
+            break;
+        }
+    }
+    return streak;
 }
-function renderStudyStreak() { /* ... same as before ... */ }
-function renderCalendar() { /* ... same as before ... */ }
+
+function renderStudyStreak() {
+    const streak = calculateStudyStreak();
+    document.getElementById('streak-display').innerHTML = `<span class="text-6xl font-extrabold text-slate-800 dark:text-white">${streak}</span> <span class="text-lg text-slate-500 font-medium ml-1">days</span>`;
+}
+
+function renderCalendar() {
+    const container = document.getElementById('calendar-container');
+    const studyHistory = new Set(JSON.parse(localStorage.getItem(STUDY_HISTORY_KEY) || '[]'));
+    const today = new Date();
+    const month = today.getMonth();
+    const year = today.getFullYear();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const startDayOfWeek = new Date(year, month, 1).getDay();
+
+    const weekdays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+    let html = `<div class="grid grid-cols-7 gap-1 text-center text-xs text-slate-500 dark:text-slate-400 font-bold">${weekdays.map(d => `<div>${d}</div>`).join('')}</div>`;
+    html += `<div class="grid grid-cols-7 gap-1 text-center text-sm text-slate-700 dark:text-slate-300 mt-3">`;
+    html += Array(startDayOfWeek).fill('<div></div>').join('');
+    for (let i = 1; i <= daysInMonth; i++) {
+        const dateStr = new Date(year, month, i).toISOString().split('T')[0];
+        let classes = 'w-8 h-8 rounded-full flex items-center justify-center mx-auto ';
+        if (i === today.getDate()) classes += 'bg-indigo-600 text-white font-bold ';
+        else if (studyHistory.has(dateStr)) classes += 'bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-200 font-medium';
+        else classes += 'bg-slate-100 dark:bg-slate-700/50 text-slate-400 dark:text-slate-500';
+        html += `<div><span class="${classes}">${i}</span></div>`;
+    }
+    html += '</div>';
+    container.innerHTML = html;
+}
 
 
 // --- 7. INITIALIZATION ---
@@ -837,6 +939,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         statsButton.addEventListener('click', loadStatsPage);
         aboutButton.addEventListener('click', () => showSection('about'));
         darkModeToggle.addEventListener('click', toggleDarkMode);
+        
         mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
         mobileMainMenuButton.addEventListener('click', loadWelcome);
         mobileDictionaryButton.addEventListener('click', () => { loadDictionary(); showSection('dictionary'); });
@@ -846,18 +949,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         resetProgressButton.addEventListener('click', resetProgress);
         document.getElementById('create-test-button').addEventListener('click', createDifficultWordsTest);
         
-        // Learn Section Buttons
         startTestButton.addEventListener('click', () => {
             isTestMode = false;
             startTest();
         });
-        // Note: skipTestButton logic is assigned dynamically in loadLearnSection()
-
+        
+        // Key Logic: Next Button behavior changes based on mode
         nextQuestionButton.addEventListener('click', () => {
             if (isTestMode) {
+                // Test Mode: Record answer and advance silently
                 if (!selectedTestAnswer) return; 
                 recordTestAnswerAndAdvance();
             } else {
+                // Practice Mode: Load NEXT question (answering is handled by option click)
                 if (!isAnswered) return; 
                 loadQuestion();
             }
@@ -869,7 +973,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('back-to-categories-gk').addEventListener('click', loadWelcome);
 
         const confirmAndLoadWelcome = () => {
-            if (confirm("Are you sure you want to exit?")) loadWelcome();
+            if (confirm("Are you sure you want to exit? Your current test progress will be lost.")) loadWelcome();
         };
         document.getElementById('back-to-categories-test').addEventListener('click', confirmAndLoadWelcome);
         document.getElementById('back-to-categories-results').addEventListener('click', loadWelcome);
@@ -884,11 +988,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         document.body.addEventListener('click', (event) => {
             const speakButton = event.target.closest('.speak-button');
-            if (speakButton) speakWord(speakButton.dataset.word);
+            if (speakButton) {
+                speakWord(speakButton.dataset.word);
+            }
         });
 
     } catch (error) {
         console.error("Failed to initialize app:", error);
-        document.body.innerHTML = `<div class="text-red-500 text-center p-8">Failed to load app.</div>`;
+        document.body.innerHTML = `<div class="text-red-500 text-center p-8">Failed to load app data. <br><small>${error.message}</small></div>`;
     }
 });
