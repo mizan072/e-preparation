@@ -237,12 +237,15 @@ body {
 
 /* --- RESULTS SCREEN --- */
 #results-section {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     height: 100%;
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+
+#results-section.active {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .results-container {
