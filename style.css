@@ -365,7 +365,7 @@ body {
     #words-to-review-list-wrapper {
        /* The flex-grow property handles this now */
     }
-
+    
     .continue-button-wrapper {
         padding: 1rem;
         position: fixed;
