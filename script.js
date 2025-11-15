@@ -292,6 +292,9 @@ function shuffleArray(array) {
 
 function startTest() {
     if (wordsInCurrentChunk.length === 0) return;
+    
+    showSection('test');
+
     if (!isTestMode) {
         shuffleArray(wordsInCurrentChunk);
     }
@@ -301,7 +304,6 @@ function startTest() {
     
     updateQuizStats();
     loadQuestion();
-    showSection('test');
 }
 
 function loadQuestion() {
@@ -373,7 +375,13 @@ function loadQuestion() {
             break;
     }
 
-    let fullWordListForOptions = wordsInCurrentChunk.length > 4 ? wordsInCurrentChunk : vocabData[currentCategory].list;
+    let fullWordListForOptions;
+    if (currentCategory === 'special') {
+        fullWordListForOptions = [...vocabData.gre.list, ...vocabData.previous.list];
+    } else {
+        fullWordListForOptions = wordsInCurrentChunk.length > 4 ? wordsInCurrentChunk : vocabData[currentCategory].list;
+    }
+    
     while (options.length < 4) {
         const randomWord = fullWordListForOptions[Math.floor(Math.random() * fullWordListForOptions.length)];
         if (randomWord.id !== currentWord.id && randomWord[optionSourceKey] && !options.some(opt => opt[optionSourceKey] === randomWord[optionSourceKey])) {
@@ -577,6 +585,9 @@ function showQuizComplete() {
                 <div class="bg-white dark:bg-slate-900/50 p-4 rounded-xl border-l-4 border-red-500 shadow-sm">
                     <div class="flex justify-between items-center mb-2">
                         <h4 class="font-bold text-indigo-600 dark:text-indigo-400 text-lg">${item.word}</h4>
+                        <button class="speak-button p-2 rounded-full text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" data-word="${item.word}">
+                            <i data-lucide="volume-2" class="w-5 h-5"></i>
+                        </button>
                     </div>
                     <p class="lang-bn text-slate-700 dark:text-slate-300 mb-1">${item.bengali}</p>
                     ${item.english ? `<p class="text-sm text-slate-500 italic">${item.english}</p>` : ''}
@@ -611,7 +622,7 @@ function continueToNext() {
         loadWelcome();
         return;
     }
-
+    
     const nextChunkIndex = (catData.currentChunkIndex || 0) + 1;
     if ((nextChunkIndex * WORDS_PER_CHUNK) >= catData.list.length) {
         loadWelcome();
@@ -814,7 +825,10 @@ function renderDifficultWords() {
     document.getElementById('create-test-button').style.display = 'block';
     list.innerHTML = sorted.map(w => `
         <div class="flex justify-between items-center text-sm border-b border-slate-100 dark:border-slate-700 pb-2.5 mb-2.5">
-            <span class="font-semibold text-slate-700 dark:text-slate-300">${w.word}</span>
+            <div>
+                <span class="font-semibold text-slate-700 dark:text-slate-300">${w.word}</span>
+                <p class="text-slate-500 text-xs">${w.bengali}</p>
+            </div>
             <span class="text-red-500 font-bold bg-red-50 dark:bg-red-900/20 px-2 py-0.5 rounded">${w.missedCount} misses</span>
         </div>
     `).join('');
@@ -822,8 +836,9 @@ function renderDifficultWords() {
 
 function createDifficultWordsTest() {
     const allWords = [...vocabData.gre.words, ...vocabData.previous.words];
-    const difficultWords = allWords.filter(w => w.missedCount > 0).sort((a, b) => b.missedCount - a.missedCount).slice(0, 20);
+    const difficultWords = allWords.filter(w => w.missedCount > 0);
     if (difficultWords.length > 0) {
+        shuffleArray(difficultWords);
         wordsInCurrentChunk = difficultWords;
         currentCategory = 'special';
         isTestMode = false; 
@@ -945,7 +960,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadProgress();
         loadDictionary();
         loadWelcome();
-
+        
         mainMenuButton.addEventListener('click', loadWelcome);
         continueButton.addEventListener('click', continueToNext);
         dictionaryButton.addEventListener('click', () => { loadDictionary(); showSection('dictionary'); });
