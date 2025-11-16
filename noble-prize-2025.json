@@ -1,0 +1,552 @@
+[
+{
+"id": 1,
+"question": "Who was awarded the 2025 Nobel Peace Prize?",
+"options": [
+"Edmundo González",
+"Súmate Foundation",
+"Maria Corina Machado",
+"The People of Venezuela"
+],
+"answer": "Maria Corina Machado"
+},
+{
+"id": 2,
+"question": "Maria Corina Machado is a prominent opposition leader and human rights advocate from which country?",
+"options": [
+"Colombia",
+"Argentina",
+"Brazil",
+"Venezuela"
+],
+"answer": "Venezuela"
+},
+{
+"id": 3,
+"question": "The Nobel Committee awarded the 2025 Peace Prize to Maria Corina Machado for her \"courageous struggle\" for what?",
+"options": [
+"Environmental protection",
+"Freedom and democracy",
+"Nuclear disarmament",
+"Gender equality"
+],
+"answer": "Freedom and democracy"
+},
+{
+"id": 4,
+"question": "The 2025 Nobel Peace Prize citation highlights Machado's efforts in the face of an...",
+"options": [
+"Economic recession",
+"Authoritarian regime",
+"Ongoing civil war",
+"Environmental disaster"
+],
+"answer": "Authoritarian regime"
+},
+{
+"id": 5,
+"question": "Which of these values did the Nobel Committee state Maria Corina Machado consistently upholds?",
+"options": [
+"Non-violent struggle",
+"Armed resistance",
+"Economic isolation",
+"Political neutrality"
+],
+"answer": "Non-violent struggle"
+},
+{
+"id": 6,
+"question": "The 2025 Peace Prize draws international attention to the political situation in...",
+"options": [
+"The Middle East",
+"Eastern Europe",
+"Sub-Saharan Africa",
+"Latin America"
+],
+"answer": "Latin America"
+},
+{
+"id": 7,
+"question": "Maria Corina Machado was awarded the prize for her efforts to ensure...",
+"options": [
+"Free and fair elections",
+"The release of all political prisoners",
+"A national truce",
+"A new economic model"
+],
+"answer": "Free and fair elections"
+},
+{
+"id": 8,
+"question": "The 2025 Nobel Prize in Literature was awarded to...",
+"options": [
+"Haruki Murakami",
+"László Krasznahorkai",
+"Can Dündar",
+"Ngũgĩ wa Thiong'o"
+],
+"answer": "László Krasznahorkai"
+},
+{
+"id": 9,
+"question": "What is the nationality of the 2025 Literature laureate, László Krasznahorkai?",
+"options": [
+"Polish",
+"Hungarian",
+"Czech",
+"Romanian"
+],
+"answer": "Hungarian"
+},
+{
+"id": 10,
+"question": "The Nobel citation praised Krasznahorkai for his \"compelling and visionary oeuvre\" that reaffirms the power of what?",
+"options": [
+"Political satire",
+"Historical accuracy",
+"Art",
+"Human kindness"
+],
+"answer": "Art"
+},
+{
+"id": 11,
+"question": "László Krasznahorkai's writing style is famously characterized by...",
+"options": [
+"Short, simple sentences",
+"Humorous and light-hearted prose",
+"Long, complex, and meandering sentences",
+"Strictly non-fiction narratives"
+],
+"answer": "Long, complex, and meandering sentences"
+},
+{
+"id": 12,
+"question": "Which of the following is one of László Krasznahorkai's most famous novels?",
+"options": [
+"The Unbearable Lightness of Being",
+"Satantango",
+"My Name Is Red",
+"The Shadow of the Wind"
+],
+"answer": "Satantango"
+},
+{
+"id": 13,
+"question": "Krasznahorkai's works often explore which of the following themes?",
+"options": [
+"Optimism and technological progress",
+"Social decay and spiritual crisis",
+"Romantic love in wartime",
+"The adventures of young protagonists"
+],
+"answer": "Social decay and spiritual crisis"
+},
+{
+"id": 14,
+"question": "Krasznahorkai is the first Nobel laureate in Literature from his country since 2002, when who won the prize?",
+"options": [
+"Imre Kertész",
+"Olga Tokarczuk",
+"Peter Handke",
+"Elfriede Jelinek"
+],
+"answer": "Imre Kertész"
+},
+{
+"id": 15,
+"question": "The 2025 Nobel Prize in Physiology or Medicine was awarded for the discovery of...",
+"options": [
+"mRNA vaccines",
+"Regulatory T cells",
+"The CRISPR-Cas9 gene editing system",
+"The function of neurons in memory"
+],
+"answer": "Regulatory T cells"
+},
+{
+"id": 16,
+"question": "Who were the three laureates who won the 2025 Nobel Prize in Physiology or Medicine?",
+"options": [
+"Clarke, Devoret, and Martinis",
+"Kitagawa, Robson, and Yaghi",
+"Brunkow, Ramsdell, and Sakaguchi",
+"Mokyr, Aghion, and Howitt"
+],
+"answer": "Brunkow, Ramsdell, and Sakaguchi"
+},
+{
+"id": 17,
+"question": "What is the primary function of Regulatory T cells (Tregs), the discovery that won the 2025 Medicine Prize?",
+"options": [
+"To directly attack cancer cells",
+"To produce antibodies",
+"To suppress the immune system and maintain tolerance",
+"To signal the presence of a virus"
+],
+"answer": "To suppress the immune system and maintain tolerance"
+},
+{
+"id": 18,
+"question": "The discovery of which gene, crucial for Treg function, was a key part of the prize?",
+"options": [
+"BRCA1",
+"p53",
+"SRY",
+"Foxp3"
+],
+"answer": "Foxp3"
+},
+{
+"id": 19,
+"question": "Which two laureates were specifically cited for their discovery of the Foxp3 gene?",
+"options": [
+"Sakaguchi and Brunkow",
+"Brunkow and Ramsdell",
+"Ramsdell and Sakaguchi",
+"Only Shimon Sakaguchi"
+],
+"answer": "Brunkow and Ramsdell"
+},
+{
+"id": 20,
+"question": "Which laureate, hailing from Japan, is credited with the initial identification of Regulatory T cells?",
+"options": [
+"Mary E. Brunkow",
+"Fred Ramsdell",
+"Shimon Sakaguchi",
+"Omar M. Yaghi"
+],
+"answer": "Shimon Sakaguchi"
+},
+{
+"id": 21,
+"question": "A malfunction or deficiency in Regulatory T cells is linked to what type of diseases?",
+"options": [
+"Autoimmune diseases",
+"Neurodegenerative diseases",
+"Cardiovascular diseases",
+"Infectious diseases"
+],
+"answer": "Autoimmune diseases"
+},
+{
+"id": 22,
+"question": "The discovery of Tregs and Foxp3 has opened new therapeutic possibilities for...",
+"options": [
+"Treating viral infections",
+"Both autoimmune diseases and cancer",
+"Reversing brain damage",
+"Curing genetic disorders"
+],
+"answer": "Both autoimmune diseases and cancer"
+},
+{
+"id": 23,
+"question": "The 2025 Nobel Prize in Physics was awarded to John Clarke, Michel H. Devoret, and John M. Martinis for their work in...",
+"options": [
+"Black hole imaging",
+"Climate change models",
+"Quantum computing",
+"Gravitational wave detection"
+],
+"answer": "Quantum computing"
+},
+{
+"id": 24,
+"question": "The laureates' work involved demonstrating \"macroscopic quantum mechanical tunnelling\" in what medium?",
+"options": [
+"A biological cell",
+"A superconducting electric circuit",
+"The vacuum of space",
+"A silicon chip at room temperature"
+],
+"answer": "A superconducting electric circuit"
+},
+{
+"id": 25,
+"question": "What is the fundamental unit of information in a quantum computer, which was central to the laureates' research?",
+"options": [
+"A bit",
+"A neuron",
+"A qubit",
+"A transistor"
+],
+"answer": "A qubit"
+},
+{
+"id": 26,
+"question": "The experiments conducted by the 2025 Physics laureates are foundational for building...",
+"options": [
+"More powerful telescopes",
+"More efficient solar panels",
+"Large-scale, functional quantum computers",
+"Faster-than-light communication"
+],
+"answer": "Large-scale, functional quantum computers"
+},
+{
+"id": 27,
+"question": "John M. Martinis is well-known for his leading role in a quantum computing team at which major technology company?",
+"options": [
+"IBM",
+"Microsoft",
+"Intel",
+"Google"
+],
+"answer": "Google"
+},
+{
+"id": 28,
+"question": "The laureates' work helps to control and measure quantum systems, a key challenge in overcoming what phenomenon?",
+"options": [
+"Quantum decoherence",
+"General relativity",
+"The Doppler effect",
+"Nuclear fission"
+],
+"answer": "Quantum decoherence"
+},
+{
+"id": 29,
+"question": "To observe quantum effects, the superconducting circuits used by the laureates had to be operated at...",
+"options": [
+"Extremely high pressures",
+"Extremely low (cryogenic) temperatures",
+"Room temperature",
+"A perfect vacuum"
+],
+"answer": "Extremely low (cryogenic) temperatures"
+},
+{
+"id": 30,
+"question": "The 2025 Nobel Prize in Chemistry was awarded to Susumu Kitagawa, Richard Robson, and Omar M. Yaghi for the discovery of...",
+"options": [
+"Lithium-ion batteries",
+"Click chemistry",
+"Graphene",
+"Metal-organic frameworks (MOFs)"
+],
+"answer": "Metal-organic frameworks (MOFs)"
+},
+{
+"id": 31,
+"question": "Metal-organic frameworks (MOFs) are best described as...",
+"options": [
+"Unbreakable alloys",
+"Highly porous materials",
+"Liquid conductors",
+"Biological catalysts"
+],
+"answer": "Highly porous materials"
+},
+{
+"id": 32,
+"question": "What is considered a major and critical application of MOFs, for which they were awarded the prize?",
+"options": [
+"Storing and capturing gases like carbon dioxide",
+"Creating brighter LED lights",
+"Filtering computer viruses",
+"Curing bacterial infections"
+],
+"answer": "Storing and capturing gases like carbon dioxide"
+},
+{
+"id": 33,
+"question": "Omar M. Yaghi, one of the 2025 Chemistry laureates, is a pioneer in a field he termed...",
+"options": [
+"Supramolecular chemistry",
+"Reticular chemistry",
+"Nanotechnology",
+"Quantum chemistry"
+],
+"answer": "Reticular chemistry"
+},
+{
+"id": 34,
+"question": "Due to their incredibly high internal surface area, MOFs are often described as...",
+"options": [
+"Molecular sponges",
+"Atomic scissors",
+"Quantum dots",
+"Chemical shields"
+],
+"answer": "Molecular sponges"
+},
+{
+"id": 35,
+"question": "Susumu Kitagawa is a laureate from which country?",
+"options": [
+"South Korea",
+"China",
+"Japan",
+"USA"
+],
+"answer": "Japan"
+},
+{
+"id": 36,
+"question": "Richard Robson's early work was crucial for demonstrating how to build the \"network-like\" structures of MOFs from...",
+"options": [
+"Carbon nanotubes",
+"Metal ions and organic linkers",
+"Silicon wafers",
+"Re-engineered proteins"
+],
+"answer": "Metal ions and organic linkers"
+},
+{
+"id": 37,
+"question": "Which of the 2025 Chemistry laureates is a Jordanian-American scientist?",
+"options": [
+"Susumu Kitagawa",
+"Richard Robson",
+"Omar M. Yaghi",
+"Ahmed Zewail"
+],
+"answer": "Omar M. Yaghi"
+},
+{
+"id": 38,
+"question": "The 2025 Sveriges Riksbank Prize in Economic Sciences was awarded to Joel Mokyr, Philippe Aghion, and Peter Howitt for their work on...",
+"options": [
+"Auction theory",
+"Alleviating global poverty",
+"Innovation-driven economic growth",
+"Behavioral economics"
+],
+"answer": "Innovation-driven economic growth"
+},
+{
+"id": 39,
+"question": "Philippe Aghion and Peter Howitt are best known for formalizing what concept into a theory of economic growth?",
+"options": [
+"Creative destruction",
+"The invisible hand",
+"Comparative advantage",
+"Laissez-faire"
+],
+"answer": "Creative destruction"
+},
+{
+"id": 40,
+"question": "In the context of Aghion and Howitt's theory, \"creative destruction\" refers to...",
+"options": [
+"Economic collapse during a recession",
+"New innovations and technologies replacing old ones",
+"The negative environmental impact of industry",
+"The failure of startup companies"
+],
+"answer": "New innovations and technologies replacing old ones"
+},
+{
+"id": 41,
+"question": "Joel Mokyr's contribution, which complemented the other laureates, focused on...",
+"options": [
+"The historical and cultural roots of technological innovation",
+"Modern monetary policy",
+"International trade agreements",
+"The role of the stock market"
+],
+"answer": "The historical and cultural roots of technological innovation"
+},
+{
+"id": 42,
+"question": "Mokyr's work, such as \"The Gifts of Athena,\" emphasizes the role of what in the Industrial Revolution?",
+"options": [
+"Access to coal",
+"\"Useful knowledge\" and its dissemination",
+"A strong central government",
+"Colonial expansion"
+],
+"answer": "\"Useful knowledge\" and its dissemination"
+},
+{
+"id": 43,
+"question": "Aghion and Howitt's work is a modern example of which type of economic theory?",
+"options": [
+"Keynesian economics",
+"Classical economics",
+"Endogenous growth theory",
+"Marxist economics"
+],
+"answer": "Endogenous growth theory"
+},
+{
+"id": 44,
+"question": "Which laureate is noted for his work on the \"Republic of Letters,\" describing the flow of ideas in early modern Europe?",
+"options": [
+"Philippe Aghion",
+"Peter Howitt",
+"Joel Mokyr",
+"Paul Romer"
+],
+"answer": "Joel Mokyr"
+},
+{
+"id": 45,
+"question": "How many individuals in total were awarded a Nobel Prize in 2025?",
+"options": [
+"10",
+"12",
+"14",
+"15"
+],
+"answer": "14"
+},
+{
+"id": 46,
+"question": "Which of the following laureates won the prize in Physics?",
+"options": [
+"Omar M. Yaghi",
+"Joel Mokyr",
+"John M. Martinis",
+"Shimon Sakaguchi"
+],
+"answer": "John M. Martinis"
+},
+{
+"id": 47,
+"question": "Which of the following 2025 laureates did NOT win for a discovery in the natural sciences (Physics, Chemistry, Medicine)?",
+"options": [
+"Susumu Kitagawa",
+"Mary E. Brunkow",
+"John Clarke",
+"Philippe Aghion"
+],
+"answer": "Philippe Aghion"
+},
+{
+"id": 48,
+"question": "Metal-Organic Frameworks (MOFs) were the subject of which 2025 Nobel Prize?",
+"options": [
+"Physics",
+"Chemistry",
+"Medicine",
+"Economic Sciences"
+],
+"answer": "Chemistry"
+},
+{
+"id": 49,
+"question": "The discovery of Regulatory T cells and the Foxp3 gene was awarded the 2025 Nobel Prize in...",
+"options": [
+"Physics",
+"Chemistry",
+"Physiology or Medicine",
+"Peace"
+],
+"answer": "Physiology or Medicine"
+},
+{
+"id": 50,
+"question": "Which of the following is the 2025 Nobel laureate in Literature?",
+"options": [
+"Maria Corina Machado",
+"László Krasznahorkai",
+"Philippe Aghion",
+"Michel H. Devoret"
+],
+"answer": "László Krasznahorkai"
+}
+]
