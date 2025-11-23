@@ -1032,3 +1032,4 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.body.innerHTML = `<div class="text-red-500 text-center p-8">Failed to load app data. <br><small>${error.message}</small></div>`;
     }
 });
+
