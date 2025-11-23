@@ -383,3 +383,42 @@ body {
     }
 }
 
+/* --- MOBILE RESPONSIVENESS FOR TEST/QUIZ --- */
+@media (max-width: 640px) {
+    #test-section .max-w-2xl {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #test-section .bg-white {
+        border-radius: 0;
+    }
+
+    #quiz-question, #quiz-question-bengali {
+        font-size: 1.5rem; /* 24px */
+        line-height: 2rem; /* 32px */
+    }
+
+    #test-section .p-8 {
+        padding: 1.5rem; /* 24px */
+    }
+
+    #test-section .min-h-\[14rem\] {
+        min-height: 10rem; /* 160px */
+    }
+
+    #quiz-options-container {
+        padding: 1rem;
+    }
+
+    .option-card span {
+        font-size: 1rem; /* 16px */
+    }
+
+    #next-question-button {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: 1rem; /* 16px */
+    }
+}
+
