@@ -1,0 +1,2356 @@
+[
+  {
+    "id": 1,
+    "question": "What is the antonym of 'contaminate'?",
+    "options": [
+      "sanctify",
+      "invigorate",
+      "taint",
+      "purify"
+    ],
+    "answer": "purify"
+  },
+  {
+    "id": 2,
+    "question": "What is the synonym of 'applaud'?",
+    "options": [
+      "Praise",
+      "Criticize",
+      "Denigrate",
+      "Impress"
+    ],
+    "answer": "Praise"
+  },
+  {
+    "id": 3,
+    "question": "A synonym OF word 'Obscure' is",
+    "options": [
+      "Apparent",
+      "Obvious",
+      "Evident",
+      "Dubious"
+    ],
+    "answer": "Dubious"
+  },
+  {
+    "id": 4,
+    "question": "A person who writes plays is called a —.",
+    "options": [
+      "play-write",
+      "playwright",
+      "plays write",
+      "play'swright"
+    ],
+    "answer": "playwright"
+  },
+  {
+    "id": 5,
+    "question": "Jamshed was unable to attend the meeting because he was feeling —.",
+    "options": [
+      "under the weather",
+      "cats & dogs",
+      "below the belt",
+      "over the moon"
+    ],
+    "answer": "under the weather"
+  },
+  {
+    "id": 6,
+    "question": "Which one is the correct spelling?",
+    "options": [
+      "Parenoia",
+      "Peranoia",
+      "Paranoia",
+      "Paranua"
+    ],
+    "answer": "Paranoia"
+  },
+  {
+    "id": 7,
+    "question": "The scientists are going to _ a study on the effects of sound pollution on young children.",
+    "options": [
+      "carry out",
+      "carry in",
+      "carry with",
+      "carry for"
+    ],
+    "answer": "carry out"
+  },
+  {
+    "id": 8,
+    "question": "The teacher took him to task means, the teacher",
+    "options": [
+      "reprimanded him",
+      "praised him",
+      "threatened him",
+      "promoted him"
+    ],
+    "answer": "reprimanded him"
+  },
+  {
+    "id": 9,
+    "question": "As far as I'm concerned, all he's good _ is making up the most improbable excuses anyone has ever heard.",
+    "options": [
+      "with",
+      "on",
+      "in",
+      "at"
+    ],
+    "answer": "at"
+  },
+  {
+    "id": 10,
+    "question": "The little boy does whatever his mother",
+    "options": [
+      "have done",
+      "were doing",
+      "does",
+      "done"
+    ],
+    "answer": "does"
+  },
+  {
+    "id": 11,
+    "question": "I _ for you for the last three months.",
+    "options": [
+      "am worked",
+      "have been working",
+      "will work",
+      "will have worked"
+    ],
+    "answer": "have been working"
+  },
+  {
+    "id": 12,
+    "question": "What is the verb form of 'ability'?",
+    "options": [
+      "Able",
+      "Ably",
+      "Enable",
+      "Ableness"
+    ],
+    "answer": "Enable"
+  },
+  {
+    "id": 13,
+    "question": "Reading as a hobby is on the wane; people hardly read newspaper, _ books.",
+    "options": [
+      "would rather",
+      "had better",
+      "let alone",
+      "as if"
+    ],
+    "answer": "let alone"
+  },
+  {
+    "id": 14,
+    "question": "The solution that the engineer provided _.",
+    "options": [
+      "was not correct but also complicated",
+      "was correct but complicated",
+      "correct only but complicated",
+      "not only correct but complicated"
+    ],
+    "answer": "was correct but complicated"
+  },
+  {
+    "id": 15,
+    "question": "No matter how hard I tried to make them understand, they just wouldn't take my word for _ I said, _ annoyed me very much.",
+    "options": [
+      "that/that",
+      "that/which",
+      "what/which",
+      "which/ which"
+    ],
+    "answer": "what/which"
+  },
+  {
+    "id": 16,
+    "question": "They never gave a thought to probable future problems when the plans _ five years ago.",
+    "options": [
+      "to be laid down",
+      "have laid down",
+      "were being laid down",
+      "had been laid down"
+    ],
+    "answer": "were being laid down"
+  },
+  {
+    "id": 17,
+    "question": "I was under the impression that you, too, _ along with us.",
+    "options": [
+      "was supposed to come",
+      "were supposed to come",
+      "have supposed to come",
+      "are supposed to come"
+    ],
+    "answer": "were supposed to come"
+  },
+  {
+    "id": 18,
+    "question": "_, Rahim went to collect his payment.",
+    "options": [
+      "Although he had completed his work successfully",
+      "Although the work has completed",
+      "having completed his work successfully",
+      "As long as the work is completed with success"
+    ],
+    "answer": "having completed his work successfully"
+  },
+  {
+    "id": 19,
+    "question": "I _ me what happened",
+    "options": [
+      "would like that tell",
+      "would like for telling",
+      "would like that you tell",
+      "would like you for tell"
+    ],
+    "answer": "would like that you tell"
+  },
+  {
+    "id": 20,
+    "question": "It was _ that Mina couldn't finish it alone.",
+    "options": [
+      "difficult job",
+      "such a difficult job",
+      "such difficult a job",
+      "very difficult a job"
+    ],
+    "answer": "such a difficult job"
+  },
+  {
+    "id": 21,
+    "question": "Which of the following sentences is correct?",
+    "options": [
+      "They treated him like a King when he won the lottery.",
+      "They treated him as being a King when he won the lottery.",
+      "They treated him a King when he won the lottery.",
+      "They treated him as if a King when he won the lottery."
+    ],
+    "answer": "They treated him like a King when he won the lottery."
+  },
+  {
+    "id": 22,
+    "question": "The thickness of the mats _.",
+    "options": [
+      "vary",
+      "varies",
+      "have varied",
+      "were variable"
+    ],
+    "answer": "vary"
+  },
+  {
+    "id": 23,
+    "question": "Which one is correct?",
+    "options": [
+      "This is the man in which I have no confidence.",
+      "This is the man who I have no confidence.",
+      "This is the man in whom I have no confidence.",
+      "This is the man whom I have no confidence."
+    ],
+    "answer": "This is the man in whom I have no confidence."
+  },
+  {
+    "id": 24,
+    "question": "The correct passive form of the sentence, 'Who has created this mess?'",
+    "options": [
+      "Who has been created this mess?",
+      "By whom is this mess created?",
+      "By whom has this mess been created?",
+      "By whom this mess is created?"
+    ],
+    "answer": "By whom has this mess been created?"
+  },
+  {
+    "id": 25,
+    "question": "This box is very heavy, _ me a hand?",
+    "options": [
+      "would you mind giving",
+      "will you mind give",
+      "are you mind giving",
+      "do you mind give"
+    ],
+    "answer": "would you mind giving"
+  },
+  {
+    "id": 26,
+    "question": "What is the synonym of \"incipient\"?",
+    "options": [
+      "hazy",
+      "Inadequate",
+      "Developing",
+      "Resistant"
+    ],
+    "answer": "Developing"
+  },
+  {
+    "id": 27,
+    "question": "What is the antonym of \"transience\"?",
+    "options": [
+      "Permanence",
+      "Deception",
+      "Instability",
+      "Fluctuation"
+    ],
+    "answer": "Permanence"
+  },
+  {
+    "id": 28,
+    "question": "The phrase 'Achilles' heel' means:",
+    "options": [
+      "Strength",
+      "Weakness",
+      "Courage",
+      "Vital point"
+    ],
+    "answer": "Weakness"
+  },
+  {
+    "id": 29,
+    "question": "'Spill the beans' means—",
+    "options": [
+      "destroy something",
+      "Reveal a secret",
+      "make a mess",
+      "Drop something accidentally"
+    ],
+    "answer": "Reveal a secret"
+  },
+  {
+    "id": 30,
+    "question": "To read between the lines' means—",
+    "options": [
+      "read rapidly",
+      "look for hiding meaning",
+      "read very quickly",
+      "memorize a passage"
+    ],
+    "answer": "look for hiding meaning"
+  },
+  {
+    "id": 31,
+    "question": "Circular শব্দের বাংলা পরিভাষিক রূপ -",
+    "options": [
+      "প্রজ্ঞাপন",
+      "প্রত্যয়ন",
+      "বিজ্ঞপ্তি",
+      "পরিপত্র"
+    ],
+    "answer": "পরিপত্র"
+  },
+  {
+    "id": 32,
+    "question": "Which one is the correct spelling?",
+    "options": [
+      "Consciencious",
+      "Conscientious",
+      "Consencious",
+      "Concietious"
+    ],
+    "answer": "Conscientious"
+  },
+  {
+    "id": 33,
+    "question": "She is skilled ------- negotiation complex contracts.",
+    "options": [
+      "at",
+      "for",
+      "on",
+      "with"
+    ],
+    "answer": "at"
+  },
+  {
+    "id": 34,
+    "question": "He vowed to ___ his father's death.",
+    "options": [
+      "revenge",
+      "avenge",
+      "take revenge",
+      "avenge for"
+    ],
+    "answer": "avenge"
+  },
+  {
+    "id": 35,
+    "question": "\"If you want the job, you need to strike while the iron is hot\" means",
+    "options": [
+      "You need to complain to the supervisor",
+      "You need to decide what you want to become in life",
+      "You need to keep preparing for the job",
+      "You need to act quickly while the opportunity is still available."
+    ],
+    "answer": "You need to act quickly while the opportunity is still available."
+  },
+  {
+    "id": 36,
+    "question": "What is the antonym of the word 'indifferent'?",
+    "options": [
+      "dissimilar",
+      "apathetic",
+      "different",
+      "caring"
+    ],
+    "answer": "caring"
+  },
+  {
+    "id": 37,
+    "question": "Choose the correct spelling.",
+    "options": [
+      "dissemination",
+      "dissasemination",
+      "disemination",
+      "dissemination"
+    ],
+    "answer": "dissemination"
+  },
+  {
+    "id": 38,
+    "question": "What is the meaning of the word 'suffrage'?",
+    "options": [
+      "fundamental right",
+      "right to vote",
+      "freedom of press",
+      "sufferings of people"
+    ],
+    "answer": "right to vote"
+  },
+  {
+    "id": 39,
+    "question": "A.K Fazlul Haque was the 'Tiger of Bengal'. The sentence is an example of an/an __.",
+    "options": [
+      "simile",
+      "metaphor",
+      "allusion",
+      "personification"
+    ],
+    "answer": "metaphor"
+  },
+  {
+    "id": 40,
+    "question": "Which of the following options is the closest in meaning to the sentence, \"He enjoyed himself immensely at the party\".",
+    "options": [
+      "He had a horrible time at the party.",
+      "He had a terrible time at the party.",
+      "He had a terrific time at the party.",
+      "He had a terrifying time at the party."
+    ],
+    "answer": "He had a terrific time at the party."
+  },
+  {
+    "id": 41,
+    "question": "The scouts in my school were sure to visit the flooded town, the condition ___ was not known.",
+    "options": [
+      "in which",
+      "whose",
+      "that",
+      "of which"
+    ],
+    "answer": "of which"
+  },
+  {
+    "id": 42,
+    "question": "I ___ newspapers every day.",
+    "options": [
+      "used to reading",
+      "use to read",
+      "am used to reading",
+      "am used to read"
+    ],
+    "answer": "am used to reading"
+  },
+  {
+    "id": 43,
+    "question": "I wish I ___ all the questions correctly.",
+    "options": [
+      "answer",
+      "answered",
+      "will answer",
+      "have answered"
+    ],
+    "answer": "answered"
+  },
+  {
+    "id": 44,
+    "question": "I cannot hear what you ___ because everybody is talking so loudly.",
+    "options": [
+      "said",
+      "saying",
+      "will be saying",
+      "are saying"
+    ],
+    "answer": "are saying"
+  },
+  {
+    "id": 45,
+    "question": "Three-fourths of the Earth's surface ___ water.",
+    "options": [
+      "are covered by",
+      "covers by",
+      "is covered by",
+      "have been covered by"
+    ],
+    "answer": "is covered by"
+  },
+  {
+    "id": 46,
+    "question": "Would you mind ___ me your pen?",
+    "options": [
+      "in lending",
+      "lending",
+      "borrowing",
+      "lend"
+    ],
+    "answer": "lending"
+  },
+  {
+    "id": 47,
+    "question": "Neither Rema nor his friends ___ guilty.",
+    "options": [
+      "is",
+      "has been found",
+      "have been found",
+      "was found"
+    ],
+    "answer": "have been found"
+  },
+  {
+    "id": 48,
+    "question": "He said that he ------ abroad last month .",
+    "options": [
+      "had been to",
+      "had been in",
+      "went to",
+      "would have gone"
+    ],
+    "answer": "had been to"
+  },
+  {
+    "id": 49,
+    "question": "The new policy will _ significant changes to our operations.",
+    "options": [
+      "bring over",
+      "bring up",
+      "bring forward",
+      "bring about"
+    ],
+    "answer": "bring about"
+  },
+  {
+    "id": 50,
+    "question": "The speaker is admired _ his eloquence and clarity.",
+    "options": [
+      "for both",
+      "to both",
+      "in both",
+      "by both"
+    ],
+    "answer": "for both"
+  },
+  {
+    "id": 51,
+    "question": "A critic rebuked the author _ the introduction for clarity.",
+    "options": [
+      "to revise",
+      "revising",
+      "revise",
+      "revised"
+    ],
+    "answer": "to revise"
+  },
+  {
+    "id": 52,
+    "question": "A comparison using \"like\" or \"as\" is called a/an—",
+    "options": [
+      "Proverb",
+      "Simile",
+      "Idiom",
+      "Metaphor"
+    ],
+    "answer": "Simile"
+  },
+  {
+    "id": 53,
+    "question": "What is the noun form of \"creative\"?",
+    "options": [
+      "Creativeness",
+      "Create",
+      "Creatively",
+      "Creating"
+    ],
+    "answer": "Creativeness"
+  },
+  {
+    "id": 54,
+    "question": "Which is the adverb form of \"efficient\"?",
+    "options": [
+      "Efficiency",
+      "Efficiently",
+      "Efficienciness",
+      "Efficience"
+    ],
+    "answer": "Efficiently"
+  },
+  {
+    "id": 55,
+    "question": "Choose the correct sentence",
+    "options": [
+      "Where have you been born?",
+      "Where had you been born?",
+      "Where were you born?",
+      "Where was your birth?"
+    ],
+    "answer": "Where were you born?"
+  },
+  {
+    "id": 56,
+    "question": "Choose the correct sentence",
+    "options": [
+      "What are your parent?",
+      "What does your parent do?",
+      "What is your parents?",
+      "What do your parent do?"
+    ],
+    "answer": "What does your parent do?"
+  },
+  {
+    "id": 57,
+    "question": "What is the antonym of 'vicissitude'?",
+    "options": [
+      "change",
+      "hardship",
+      "fluctuation",
+      "stability"
+    ],
+    "answer": "stability"
+  },
+  {
+    "id": 58,
+    "question": "What is the synonym of 'ponder'?",
+    "options": [
+      "ignore",
+      "Wonder",
+      "Think deeply",
+      "Act quickly"
+    ],
+    "answer": "Think deeply"
+  },
+  {
+    "id": 59,
+    "question": "Which one is the correct spelling?",
+    "options": [
+      "Manuever",
+      "Manover",
+      "Manuevere",
+      "Manoeuvre"
+    ],
+    "answer": "Manoeuvre"
+  },
+  {
+    "id": 60,
+    "question": "To \"keep someone at arm's length\" means to",
+    "options": [
+      "keep someone close and trusted",
+      "physically push someone away",
+      "hug someone warmly",
+      "maintain distance or avoid close relationship"
+    ],
+    "answer": "maintain distance or avoid close relationship"
+  },
+  {
+    "id": 61,
+    "question": "A short saying that expresses a general truth is a ------.",
+    "options": [
+      "simile",
+      "idiom",
+      "proverb",
+      "metaphor"
+    ],
+    "answer": "proverb"
+  },
+  {
+    "id": 62,
+    "question": "He tried to explain it, but I couldn't make _ of it.",
+    "options": [
+      "pieces and bits",
+      "meaningful",
+      "cuts and corners",
+      "head or tail"
+    ],
+    "answer": "head or tail"
+  },
+  {
+    "id": 63,
+    "question": "What does the phrase \"heat one's brain out\" mean?",
+    "options": [
+      "To physically hurt someone",
+      "To memorize something quickly",
+      "To act sensibly",
+      "To think very hard about something"
+    ],
+    "answer": "To think very hard about something"
+  },
+  {
+    "id": 64,
+    "question": "The meaning of the phrase Daisy Dukes",
+    "options": [
+      "important",
+      "shorts",
+      "soft",
+      "delicate"
+    ],
+    "answer": "shorts"
+  },
+  {
+    "id": 65,
+    "question": "Choose the word that is correctly spelt:",
+    "options": [
+      "Ridiculous",
+      "Rediculous",
+      "Ridiculus",
+      "Ridiculas"
+    ],
+    "answer": "Ridiculous"
+  },
+  {
+    "id": 66,
+    "question": "Choose the word that is correctly spelt:",
+    "options": [
+      "Precinct",
+      "Prensict",
+      "Prensinct",
+      "Preinct"
+    ],
+    "answer": "Precinct"
+  },
+  {
+    "id": 67,
+    "question": "Call it a day",
+    "options": [
+      "Start working",
+      "Finish working",
+      "Take a break",
+      "Work overtime"
+    ],
+    "answer": "Finish working"
+  },
+  {
+    "id": 68,
+    "question": "Elephant in the room",
+    "options": [
+      "Large company",
+      "Big investment",
+      "Obvious issue",
+      "Negotiation"
+    ],
+    "answer": "Obvious issue"
+  },
+  {
+    "id": 69,
+    "question": "After several delays, the company finally managed to _ the merger last week.",
+    "options": [
+      "bring about",
+      "bring over",
+      "bring up",
+      "bring in"
+    ],
+    "answer": "bring about"
+  },
+  {
+    "id": 70,
+    "question": "He takes pride _ his meticulous attention to detail, even when no one notices.",
+    "options": [
+      "at",
+      "for",
+      "in",
+      "with"
+    ],
+    "answer": "in"
+  },
+  {
+    "id": 71,
+    "question": "What is the noun form of \"beautiful\"?",
+    "options": [
+      "Beautifly",
+      "Beautifully",
+      "Beautifying",
+      "Beauty"
+    ],
+    "answer": "Beauty"
+  },
+  {
+    "id": 72,
+    "question": "They made her _ the entire proposal again from scratch.",
+    "options": [
+      "to rewrite",
+      "rewriting",
+      "rewrite",
+      "rewritten"
+    ],
+    "answer": "rewrite"
+  },
+  {
+    "id": 73,
+    "question": "Find the synonym of the word: PERPETUAL",
+    "options": [
+      "Immortal",
+      "Fatal",
+      "Consistence",
+      "Adhesion"
+    ],
+    "answer": "Immortal"
+  },
+  {
+    "id": 74,
+    "question": "Find the synonym of the word ‘Hypothesis’?",
+    "options": [
+      "Proof",
+      "Quality",
+      "Supposition",
+      "Promotion"
+    ],
+    "answer": "Supposition"
+  },
+  {
+    "id": 75,
+    "question": "The antonym of the word 'Prodigal' is—",
+    "options": [
+      "Thrifty",
+      "Peculiar",
+      "Amity",
+      "Strange"
+    ],
+    "answer": "Thrifty"
+  },
+  {
+    "id": 76,
+    "question": "The antonym of the word 'delicious' is—",
+    "options": [
+      "appetizing",
+      "scrumptious",
+      "displeasing",
+      "dainty"
+    ],
+    "answer": "displeasing"
+  },
+  {
+    "id": 77,
+    "question": "Choose the word that is spelled correctly-",
+    "options": [
+      "Bureacracy",
+      "Bereaucracy",
+      "Buercracy",
+      "Bureaucracy"
+    ],
+    "answer": "Bureaucracy"
+  },
+  {
+    "id": 78,
+    "question": "Choose the word that is spelled correctly-",
+    "options": [
+      "Diphtheria",
+      "Diptheria",
+      "Deptheria",
+      "Dephtheria"
+    ],
+    "answer": "Diphtheria"
+  },
+  {
+    "id": 79,
+    "question": "Your conduct admits ----- no excuse.",
+    "options": [
+      "to",
+      "for",
+      "of",
+      "at"
+    ],
+    "answer": "of"
+  },
+  {
+    "id": 80,
+    "question": "Data is the plural form of which one",
+    "options": [
+      "Dative",
+      "Datu",
+      "Datum",
+      "Datas"
+    ],
+    "answer": "Datum"
+  },
+  {
+    "id": 81,
+    "question": "Which one is singular",
+    "options": [
+      "Agenda",
+      "Hypothesis",
+      "Media",
+      "Syllabi"
+    ],
+    "answer": "Hypothesis"
+  },
+  {
+    "id": 82,
+    "question": "Which one of the following is a feminine gender?",
+    "options": [
+      "Chairman",
+      "hen",
+      "book",
+      "table"
+    ],
+    "answer": "hen"
+  },
+  {
+    "id": 83,
+    "question": "Money or property brought by a woman to her husband at marriage",
+    "options": [
+      "Ornament",
+      "Honorary",
+      "Adornment",
+      "Dowry"
+    ],
+    "answer": "Dowry"
+  },
+  {
+    "id": 84,
+    "question": "The man --- malaria.",
+    "options": [
+      "died of",
+      "died off",
+      "died from",
+      "died by"
+    ],
+    "answer": "died of"
+  },
+  {
+    "id": 85,
+    "question": "The girl ----- be innocent",
+    "options": [
+      "appeared into",
+      "appeared to",
+      "Accused to",
+      "appeared as"
+    ],
+    "answer": "appeared to"
+  },
+  {
+    "id": 86,
+    "question": "I --- you on this point.",
+    "options": [
+      "different from",
+      "different with",
+      "indifferent to",
+      "differ with"
+    ],
+    "answer": "differ with"
+  },
+  {
+    "id": 87,
+    "question": "After breakfast, she --- in the park",
+    "options": [
+      "walked about",
+      "walked through",
+      "walked along",
+      "walk along"
+    ],
+    "answer": "walked along"
+  },
+  {
+    "id": 88,
+    "question": "Students should --- the rule.",
+    "options": [
+      "aim at",
+      "abide by",
+      "bask in",
+      "cohort in"
+    ],
+    "answer": "abide by"
+  },
+  {
+    "id": 89,
+    "question": "What is the antonym of Audacious",
+    "options": [
+      "Bold",
+      "Timid",
+      "Fearless",
+      "Daring"
+    ],
+    "answer": "Timid"
+  },
+  {
+    "id": 90,
+    "question": "What is the antonym of Frivolous",
+    "options": [
+      "Serious",
+      "Trivial",
+      "Fun",
+      "Silly"
+    ],
+    "answer": "Serious"
+  },
+  {
+    "id": 91,
+    "question": "What is the antonym of Contrite",
+    "options": [
+      "Angry",
+      "Protracted",
+      "Unrepentant",
+      "Surfeit"
+    ],
+    "answer": "Unrepentant"
+  },
+  {
+    "id": 92,
+    "question": "What is the antonym of Mollify",
+    "options": [
+      "Stultify",
+      "Infuriate",
+      "Placate",
+      "Squander"
+    ],
+    "answer": "Infuriate"
+  },
+  {
+    "id": 93,
+    "question": "What is the antonym of Innocuous",
+    "options": [
+      "Harmless",
+      "Dangerous",
+      "Insignificant",
+      "Gentle"
+    ],
+    "answer": "Dangerous"
+  },
+  {
+    "id": 94,
+    "question": "What is the synonym of Ubiquitous",
+    "options": [
+      "Rare",
+      "Widespread",
+      "Local",
+      "Invisible"
+    ],
+    "answer": "Widespread"
+  },
+  {
+    "id": 95,
+    "question": "What is the synonym of Perfunctory",
+    "options": [
+      "Thorough",
+      "Superficial",
+      "Passionate",
+      "Careful"
+    ],
+    "answer": "Superficial"
+  },
+  {
+    "id": 96,
+    "question": "What is the synonym of Ameliorate",
+    "options": [
+      "Worsen",
+      "Improve",
+      "Neglect",
+      "Reject"
+    ],
+    "answer": "Improve"
+  },
+  {
+    "id": 97,
+    "question": "What is the synonym of Auspicious",
+    "options": [
+      "Inauspicious",
+      "Prolific",
+      "Propitious",
+      "Dubious"
+    ],
+    "answer": "Propitious"
+  },
+  {
+    "id": 98,
+    "question": "What is the synonym of Jingoism",
+    "options": [
+      "Nepotism",
+      "Altruism",
+      "Chauvinism",
+      "Solecism"
+    ],
+    "answer": "Chauvinism"
+  },
+  {
+    "id": 99,
+    "question": "Highly attractive and able to arouses hope and desire",
+    "options": [
+      "Alluring",
+      "Elusiveness",
+      "Tenacity",
+      "Knotty"
+    ],
+    "answer": "Alluring"
+  },
+  {
+    "id": 100,
+    "question": "The right and power to interpret and apply the law",
+    "options": [
+      "Nugatory",
+      "Jurisdiction",
+      "Lawrence",
+      "Judiciary"
+    ],
+    "answer": "Jurisdiction"
+  },
+  {
+    "id": 101,
+    "question": "An act of mass destruction and loss of life",
+    "options": [
+      "Oregon",
+      "Cannibal",
+      "Holocaust",
+      "Homicide"
+    ],
+    "answer": "Holocaust"
+  },
+  {
+    "id": 102,
+    "question": "A person with the same name as another",
+    "options": [
+      "Nickname",
+      "Namesake",
+      "Anonymous",
+      "Pseudonym"
+    ],
+    "answer": "Namesake"
+  },
+  {
+    "id": 103,
+    "question": "Identify the common gender:",
+    "options": [
+      "Mentrix",
+      "Doe",
+      "Gander",
+      "Cousin"
+    ],
+    "answer": "Cousin"
+  },
+  {
+    "id": 104,
+    "question": "Identify the correct spelling:",
+    "options": [
+      "reconnaisance",
+      "reconnoissance",
+      "reconnaissance",
+      "reconnaissence"
+    ],
+    "answer": "reconnaissance"
+  },
+  {
+    "id": 105,
+    "question": "The verb form of the word 'amusement' is—",
+    "options": [
+      "amuse",
+      "amusing",
+      "amused",
+      "amusingly"
+    ],
+    "answer": "amuse"
+  },
+  {
+    "id": 106,
+    "question": "My brother is an elderly person. Here 'elderly' is—",
+    "options": [
+      "noun",
+      "adverb",
+      "adjective",
+      "conjunction"
+    ],
+    "answer": "adjective"
+  },
+  {
+    "id": 107,
+    "question": "Identify the word having the same form in both singular and plural:",
+    "options": [
+      "craft",
+      "hunk",
+      "hunk",
+      "moose"
+    ],
+    "answer": "moose"
+  },
+  {
+    "id": 108,
+    "question": "Fill in the blank with the appropriate article: The mother seized — boy by the collar.",
+    "options": [
+      "the",
+      "a",
+      "an",
+      "none of the above"
+    ],
+    "answer": "the"
+  },
+  {
+    "id": 109,
+    "question": "The moon goes round the earth. In this sentence ‘round’ is a/an—",
+    "options": [
+      "conjunction",
+      "preposition",
+      "adjective",
+      "adverb"
+    ],
+    "answer": "preposition"
+  },
+  {
+    "id": 110,
+    "question": "The suffix ‘hood’ can be added to—",
+    "options": [
+      "friend",
+      "honest",
+      "parent",
+      "wide"
+    ],
+    "answer": "parent"
+  },
+  {
+    "id": 111,
+    "question": "What does 'take someone to task' mean?",
+    "options": [
+      "to scold someone",
+      "to give someone an activity",
+      "to praise someone",
+      "to take revenge on someone"
+    ],
+    "answer": "to scold someone"
+  },
+  {
+    "id": 112,
+    "question": "What is the synonym of 'lament'?",
+    "options": [
+      "Delight",
+      "Bemoan",
+      "Exult",
+      "Rejoice"
+    ],
+    "answer": "Bemoan"
+  },
+  {
+    "id": 113,
+    "question": "If you dilly-dally, you __.",
+    "options": [
+      "do your work diligently",
+      "do your work slowly",
+      "hesitate to do your work",
+      "do your work quickly"
+    ],
+    "answer": "do your work slowly"
+  },
+  {
+    "id": 114,
+    "question": "There is a breakthrough in the negotiation between the rebel group and the government. What is the meaning of 'breakthrough' here?",
+    "options": [
+      "an important development",
+      "an interval",
+      "a deadline",
+      "an interruption"
+    ],
+    "answer": "an important development"
+  },
+  {
+    "id": 115,
+    "question": "What does 'rule of thumb' mean?",
+    "options": [
+      "To complain with angry emotion",
+      "To give approval",
+      "To measure something",
+      "A general guidance and making a decision"
+    ],
+    "answer": "A general guidance and making a decision"
+  },
+  {
+    "id": 116,
+    "question": "There is a strong friendship ___ Taskin and Naziha.",
+    "options": [
+      "within",
+      "between",
+      "with",
+      "in"
+    ],
+    "answer": "between"
+  },
+  {
+    "id": 117,
+    "question": "Which word is plural?",
+    "options": [
+      "Criteria",
+      "Index",
+      "Analysis",
+      "Crisis"
+    ],
+    "answer": "Criteria"
+  },
+  {
+    "id": 118,
+    "question": "What is the antonym of 'sacred'?",
+    "options": [
+      "Inviolable",
+      "Exempt",
+      "Blasphemous",
+      "Pure"
+    ],
+    "answer": "Blasphemous"
+  },
+  {
+    "id": 119,
+    "question": "Identify the synonym of 'Denial':",
+    "options": [
+      "rebuff",
+      "refusal",
+      "rebuttal",
+      "refuge"
+    ],
+    "answer": "refusal"
+  },
+  {
+    "id": 120,
+    "question": "The word 'decadent' means",
+    "options": [
+      "rotten",
+      "morally declined",
+      "dissident",
+      "defiant"
+    ],
+    "answer": "morally declined"
+  },
+  {
+    "id": 121,
+    "question": "Select the antonym for Generous",
+    "options": [
+      "cruel",
+      "harsh",
+      "friendly",
+      "stingy"
+    ],
+    "answer": "stingy"
+  },
+  {
+    "id": 122,
+    "question": "Blockade এর বাংলা পারিভাষিক শব্দ কোনটি",
+    "options": [
+      "বন্ধন",
+      "অবরোধ",
+      "চাপ",
+      "আবর্ত"
+    ],
+    "answer": "অবরোধ"
+  },
+  {
+    "id": 123,
+    "question": "The idiom cry over spilled milk means—",
+    "options": [
+      "to be upset about something irretrievably lost",
+      "to cry incessantly",
+      "to cry for a dead pet",
+      "to cry for urgent help"
+    ],
+    "answer": "to be upset about something irretrievably lost"
+  },
+  {
+    "id": 124,
+    "question": "The idiom 'carry on with' means—",
+    "options": [
+      "to progress carefully",
+      "to progress fast",
+      "to continue",
+      "to progress gradually"
+    ],
+    "answer": "to continue"
+  },
+  {
+    "id": 125,
+    "question": "The word biophilia means—",
+    "options": [
+      "relating to biology",
+      "human tendency to connect with nature",
+      "study of nature",
+      "biological"
+    ],
+    "answer": "human tendency to connect with nature"
+  },
+  {
+    "id": 126,
+    "question": "Fill in the blank with the appropriate preposition: Rina does not excel — English.",
+    "options": [
+      "at",
+      "to",
+      "for",
+      "of"
+    ],
+    "answer": "at"
+  },
+  {
+    "id": 127,
+    "question": "Choose the synonym for \"fright\":",
+    "options": [
+      "Pusillanimity",
+      "Composure",
+      "Apprehension",
+      "Equanimity"
+    ],
+    "answer": "Apprehension"
+  },
+  {
+    "id": 128,
+    "question": "A person who leaves his/her own country to settle permanently in another is called a/an",
+    "options": [
+      "immigrant",
+      "expatriate",
+      "emigrant",
+      "migrant"
+    ],
+    "answer": "emigrant"
+  },
+  {
+    "id": 129,
+    "question": "“The icing on the cake” means —",
+    "options": [
+      "a slice of the cake",
+      "an attractive but unnecessary addition",
+      "an attractive service",
+      "an attractive and essential enhancement"
+    ],
+    "answer": "an attractive but unnecessary addition"
+  },
+  {
+    "id": 130,
+    "question": "Selina knocked it ------ the park with her performance in culinary arts.",
+    "options": [
+      "outside",
+      "out of",
+      "inside",
+      "off"
+    ],
+    "answer": "out of"
+  },
+  {
+    "id": 131,
+    "question": "She’s mad— me for being late.",
+    "options": [
+      "to",
+      "towards",
+      "at",
+      "against"
+    ],
+    "answer": "at"
+  },
+  {
+    "id": 132,
+    "question": "Which of the following words has two plural forms?",
+    "options": [
+      "father",
+      "mother",
+      "sister",
+      "brother"
+    ],
+    "answer": "brother"
+  },
+  {
+    "id": 133,
+    "question": "Complete the following proverb: Fools rush in where—",
+    "options": [
+      "angels fear to tread",
+      "every angel fears to tread",
+      "angels fear to tread",
+      "all angels fear to tread"
+    ],
+    "answer": "angels fear to tread"
+  },
+  {
+    "id": 134,
+    "question": "Intellectual montage is / an—",
+    "options": [
+      "mental condition",
+      "film editing technique that juxtaposes contrasting images",
+      "philosophical terminology",
+      "alternative term for a flashback"
+    ],
+    "answer": "film editing technique that juxtaposes contrasting images"
+  },
+  {
+    "id": 135,
+    "question": "The noun form of “replete” is—",
+    "options": [
+      "repletation",
+      "repletance",
+      "replecacy",
+      "repletion"
+    ],
+    "answer": "repletion"
+  },
+  {
+    "id": 136,
+    "question": "Come on, it's time to go home. Here “home” is / an—",
+    "options": [
+      "noun",
+      "adjective",
+      "adverb",
+      "verb"
+    ],
+    "answer": "adverb"
+  },
+  {
+    "id": 137,
+    "question": "Glossary শব্দের বাংলা পরিভাষা",
+    "options": [
+      "জ্ঞানপত্র",
+      "সর্বসাকল্যে",
+      "গুদামজাত",
+      "শব্দার্থপঞ্জি"
+    ],
+    "answer": "শব্দার্থপঞ্জি"
+  },
+  {
+    "id": 138,
+    "question": "Which one has the identical singular and plural form?",
+    "options": [
+      "Memorandum",
+      "Stimulus",
+      "Dice",
+      "Oasis"
+    ],
+    "answer": "Dice"
+  },
+  {
+    "id": 139,
+    "question": "Fill in the blank with the appropriate preposition: \"She was married _ a rich man.\"",
+    "options": [
+      "with",
+      "to",
+      "of",
+      "off"
+    ],
+    "answer": "to"
+  },
+  {
+    "id": 140,
+    "question": "Which gender is the word 'sibling'?",
+    "options": [
+      "Masculine",
+      "Feminine",
+      "Neuter",
+      "Common"
+    ],
+    "answer": "Common"
+  },
+  {
+    "id": 141,
+    "question": "Find out the correctly spelt word:",
+    "options": [
+      "reminiscence",
+      "reminescence",
+      "reminiscence",
+      "remaniscence"
+    ],
+    "answer": "reminiscence"
+  },
+  {
+    "id": 142,
+    "question": "\"It was a cowardly attack on a defenceless man.\" Here 'cowardly' is a—",
+    "options": [
+      "adverb",
+      "adjective",
+      "noun",
+      "conjunction"
+    ],
+    "answer": "adjective"
+  },
+  {
+    "id": 143,
+    "question": "\"The river flows past the village.\" Here 'past' is a/an—",
+    "options": [
+      "noun",
+      "verb",
+      "adverb",
+      "preposition"
+    ],
+    "answer": "preposition"
+  },
+  {
+    "id": 144,
+    "question": "The synonym of the word 'doleful' is—",
+    "options": [
+      "playful",
+      "cheerful",
+      "mournful",
+      "deceitful"
+    ],
+    "answer": "mournful"
+  },
+  {
+    "id": 145,
+    "question": "The antonym of the word 'Sanguine' is—",
+    "options": [
+      "hopeful",
+      "sarcastic",
+      "angry",
+      "pessimistic"
+    ],
+    "answer": "pessimistic"
+  },
+  {
+    "id": 146,
+    "question": "Choose the correct spelling.",
+    "options": [
+      "connoisseur",
+      "cosiseur",
+      "connaisure",
+      "connisure"
+    ],
+    "answer": "connoisseur"
+  },
+  {
+    "id": 147,
+    "question": "I bumped — one of my school teachers at New Market yesterday.",
+    "options": [
+      "with",
+      "into",
+      "against",
+      "to"
+    ],
+    "answer": "into"
+  },
+  {
+    "id": 148,
+    "question": "The past form of the verb 'beat' is—",
+    "options": [
+      "beater",
+      "beat",
+      "bit",
+      "bite"
+    ],
+    "answer": "beat"
+  },
+  {
+    "id": 149,
+    "question": "Which of the following is in singular form?",
+    "options": [
+      "hypotheses",
+      "radius",
+      "formulae",
+      "syllabi"
+    ],
+    "answer": "radius"
+  },
+  {
+    "id": 150,
+    "question": "What is the feminine gender of 'Sheep'?",
+    "options": [
+      "more",
+      "ewe",
+      "doe",
+      "cow"
+    ],
+    "answer": "ewe"
+  },
+  {
+    "id": 151,
+    "question": "What is the meaning of 'out and out'—",
+    "options": [
+      "not at all",
+      "through",
+      "thoroughly",
+      "outside"
+    ],
+    "answer": "thoroughly"
+  },
+  {
+    "id": 152,
+    "question": "Choose the correct antonym of the word “macho”:",
+    "options": [
+      "arrogant",
+      "haughty",
+      "modest",
+      "machismo"
+    ],
+    "answer": "modest"
+  },
+  {
+    "id": 153,
+    "question": "Which of the following is a synonym of “diminutive”?",
+    "options": [
+      "petite",
+      "short",
+      "large",
+      "pigmy"
+    ],
+    "answer": "petite"
+  },
+  {
+    "id": 154,
+    "question": "The “green-eyed monster” means—",
+    "options": [
+      "danger",
+      "hatred",
+      "envy",
+      "jealousy"
+    ],
+    "answer": "jealousy"
+  },
+  {
+    "id": 155,
+    "question": "Ethics শব্দের সঠিক পারিভাষিক শব্দ কোনটি",
+    "options": [
+      "তথ্যচিত্র",
+      "ব্রতকথা",
+      "তথ্যকথা",
+      "নীতিশাস্ত্র"
+    ],
+    "answer": "নীতিশাস্ত্র"
+  },
+  {
+    "id": 156,
+    "question": "Which one is the correct spelling?",
+    "options": [
+      "assasination",
+      "aquarium",
+      "armatur",
+      "assylum"
+    ],
+    "answer": "aquarium"
+  },
+  {
+    "id": 157,
+    "question": "“A way of speaking or writing that makes something sound better or more exciting than it really is.” — this can be the best definition of—",
+    "options": [
+      "oxymoron",
+      "synecdoche",
+      "sarcasm",
+      "hyperbole"
+    ],
+    "answer": "hyperbole"
+  },
+  {
+    "id": 158,
+    "question": "Macbeth killed the king. He was arrested on the charge of—",
+    "options": [
+      "patricide",
+      "regicide",
+      "fratricide",
+      "homicide"
+    ],
+    "answer": "regicide"
+  },
+  {
+    "id": 159,
+    "question": "What is the meaning of ‘French leave’?",
+    "options": [
+      "Leave no holiday",
+      "Spending time in France",
+      "Leave without permission",
+      "Emergence Leave"
+    ],
+    "answer": "Leave without permission"
+  },
+  {
+    "id": 160,
+    "question": "The synonym of the word ‘spectacular’ is",
+    "options": [
+      "ugly",
+      "Spacious",
+      "Breathtaking",
+      "spatial"
+    ],
+    "answer": "Breathtaking"
+  },
+  {
+    "id": 161,
+    "question": "Transparency শব্দের বাংলা পরিভাষা কী?",
+    "options": [
+      "যথার্থতা",
+      "নির্ভরযোগ্যতা",
+      "স্বচ্ছতা",
+      "দুর্নীতিদমন"
+    ],
+    "answer": "স্বচ্ছতা"
+  },
+  {
+    "id": 162,
+    "question": "What does the idiom “take someone to task” mean?",
+    "options": [
+      "To give someone a task to do",
+      "To praise someone for his task",
+      "To rebuke someone",
+      "To appoint someone"
+    ],
+    "answer": "To rebuke someone"
+  },
+  {
+    "id": 163,
+    "question": "Choose the correct spelling",
+    "options": [
+      "Repeatition",
+      "Repeatation",
+      "Repetition",
+      "Ripiatition"
+    ],
+    "answer": "Repetition"
+  },
+  {
+    "id": 164,
+    "question": "কোনটি অশুদ্ধ বানান?",
+    "options": [
+      "Pneumonia",
+      "Dyspepsia",
+      "Gastitis",
+      "Diarrhea"
+    ],
+    "answer": "Gastitis"
+  },
+  {
+    "id": 165,
+    "question": "Do you know the solution ---- the problem?",
+    "options": [
+      "of",
+      "for",
+      "to",
+      "about"
+    ],
+    "answer": "to"
+  },
+  {
+    "id": 166,
+    "question": "She succeeded ---- her good work.",
+    "options": [
+      "because",
+      "since",
+      "because of",
+      "as"
+    ],
+    "answer": "because of"
+  },
+  {
+    "id": 167,
+    "question": "She works hard. What part of speech is the underlined word.",
+    "options": [
+      "Adjective",
+      "Adverb",
+      "Verb",
+      "Noun"
+    ],
+    "answer": "Adverb"
+  },
+  {
+    "id": 168,
+    "question": "A speech made without any previous thought, preparation or practice is called a/an—",
+    "options": [
+      "free speech",
+      "extempore speech",
+      "maiden speech",
+      "rousing speech"
+    ],
+    "answer": "extempore speech"
+  },
+  {
+    "id": 169,
+    "question": "Choose the antonym of ‘controversy’:",
+    "options": [
+      "contention",
+      "bickering",
+      "unanimity",
+      "dispute"
+    ],
+    "answer": "unanimity"
+  },
+  {
+    "id": 170,
+    "question": "Select the synonym for ‘inclement’:",
+    "options": [
+      "affable",
+      "mild",
+      "rough",
+      "genial"
+    ],
+    "answer": "rough"
+  },
+  {
+    "id": 171,
+    "question": "The idiom 'smell a rat' means to—",
+    "options": [
+      "detect bad smell",
+      "be in a bad mood",
+      "suspect something wrong",
+      "see hidden meaning"
+    ],
+    "answer": "suspect something wrong"
+  },
+  {
+    "id": 172,
+    "question": "The prefix 'non' can be added to—",
+    "options": [
+      "office",
+      "regular",
+      "partisan",
+      "obey"
+    ],
+    "answer": "regular"
+  },
+  {
+    "id": 173,
+    "question": "Pick the correct spelt word —",
+    "options": [
+      "Conscientious",
+      "Consientious",
+      "Concientious",
+      "Conscientious"
+    ],
+    "answer": "Conscientious"
+  },
+  {
+    "id": 174,
+    "question": "We work every day except Friday. In this sentence “except” is an —",
+    "options": [
+      "Adjective",
+      "Noun",
+      "Preposition",
+      "Pronoun"
+    ],
+    "answer": "Preposition"
+  },
+  {
+    "id": 175,
+    "question": "Which of the following is the correct feminine form of “neighbour”?",
+    "options": [
+      "Masculin",
+      "Feminine",
+      "Neuter",
+      "Common"
+    ],
+    "answer": "Common"
+  },
+  {
+    "id": 176,
+    "question": "Identify the word that can be used as both singular and plural —",
+    "options": [
+      "Light",
+      "Shot",
+      "Criterion",
+      "Cannon"
+    ],
+    "answer": "Cannon"
+  },
+  {
+    "id": 177,
+    "question": "“After lunch we went for a leisurely stroll.” Here “leisurely” is an —",
+    "options": [
+      "adverb",
+      "Adjective",
+      "Noun",
+      "conjunction"
+    ],
+    "answer": "Adjective"
+  },
+  {
+    "id": 178,
+    "question": "Which sentence is correct?",
+    "options": [
+      "The picture was hanged on the wall.",
+      "The picture was hung on the wall.",
+      "The picture was hunged on the wall.",
+      "The picture had hanged on the wall."
+    ],
+    "answer": "The picture was hung on the wall."
+  },
+  {
+    "id": 179,
+    "question": "The correct spelling is —.",
+    "options": [
+      "Examplary",
+      "Exemplary",
+      "Exemplery",
+      "Examplery"
+    ],
+    "answer": "Exemplary"
+  },
+  {
+    "id": 180,
+    "question": "Which one is the feminine gender of ‘horse’.",
+    "options": [
+      "Hind",
+      "Doe",
+      "Mare",
+      "Vixen"
+    ],
+    "answer": "Mare"
+  },
+  {
+    "id": 181,
+    "question": "Plural form of the word Appendix is",
+    "options": [
+      "Appendixes",
+      "Appendises",
+      "Appendices",
+      "Appendrics"
+    ],
+    "answer": "Appendices"
+  },
+  {
+    "id": 182,
+    "question": "Which one is in plural number?",
+    "options": [
+      "data",
+      "basis",
+      "goose",
+      "formula"
+    ],
+    "answer": "data"
+  },
+  {
+    "id": 183,
+    "question": "If a substance is cohesive, it tends to-.",
+    "options": [
+      "bend without much difficulty",
+      "retain heat",
+      "stick together",
+      "break easily"
+    ],
+    "answer": "stick together"
+  },
+  {
+    "id": 184,
+    "question": "The opposite of \"admit\" is to...",
+    "options": [
+      "defy",
+      "deny",
+      "doubt",
+      "accept"
+    ],
+    "answer": "deny"
+  },
+  {
+    "id": 185,
+    "question": "The word 'Tiny' means:",
+    "options": [
+      "small",
+      "thin",
+      "strong",
+      "tall"
+    ],
+    "answer": "small"
+  },
+  {
+    "id": 186,
+    "question": "The word 'essential' means:",
+    "options": [
+      "very clear",
+      "very important",
+      "very new",
+      "very difficult"
+    ],
+    "answer": "very important"
+  },
+  {
+    "id": 187,
+    "question": "It had been raining _ three days.",
+    "options": [
+      "of",
+      "from",
+      "for",
+      "on"
+    ],
+    "answer": "for"
+  },
+  {
+    "id": 188,
+    "question": "...Friday evening, I saw him.",
+    "options": [
+      "in",
+      "at",
+      "of",
+      "from"
+    ],
+    "answer": "at"
+  },
+  {
+    "id": 189,
+    "question": "Turn right ---- the traffic light",
+    "options": [
+      "on",
+      "at",
+      "in",
+      "over"
+    ],
+    "answer": "at"
+  },
+  {
+    "id": 190,
+    "question": "I went... the kitchen to make dinner.",
+    "options": [
+      "on",
+      "from",
+      "of",
+      "in"
+    ],
+    "answer": "in"
+  },
+  {
+    "id": 191,
+    "question": "Mainamati flows... Cumilla and Dhaka.",
+    "options": [
+      "by",
+      "between",
+      "beyond",
+      "beside"
+    ],
+    "answer": "between"
+  },
+  {
+    "id": 192,
+    "question": "He goes home --- foot.",
+    "options": [
+      "with",
+      "on",
+      "to",
+      "by"
+    ],
+    "answer": "on"
+  },
+  {
+    "id": 193,
+    "question": "The books are ----- the table.",
+    "options": [
+      "on",
+      "above",
+      "from",
+      "in"
+    ],
+    "answer": "on"
+  },
+  {
+    "id": 194,
+    "question": "It has been raining --- two hours.",
+    "options": [
+      "of",
+      "about",
+      "between",
+      "for"
+    ],
+    "answer": "for"
+  },
+  {
+    "id": 195,
+    "question": "Many young people died --- the nation.",
+    "options": [
+      "of",
+      "by",
+      "in",
+      "for"
+    ],
+    "answer": "for"
+  },
+  {
+    "id": 196,
+    "question": "It has been raining --- two hours.",
+    "options": [
+      "of",
+      "about",
+      "between",
+      "for"
+    ],
+    "answer": "for"
+  },
+  {
+    "id": 197,
+    "question": "A man of character is true --- his word.",
+    "options": [
+      "in",
+      "on",
+      "to",
+      "at"
+    ],
+    "answer": "to"
+  },
+  {
+    "id": 198,
+    "question": "Identify the correct spelling",
+    "options": [
+      "surveillance",
+      "survaillance",
+      "survuillence",
+      "survillance"
+    ],
+    "answer": "surveillance"
+  },
+  {
+    "id": 199,
+    "question": "Which one of following is correct?",
+    "options": [
+      "Adolescence",
+      "Addolescence",
+      "Adolescense",
+      "Adollescence"
+    ],
+    "answer": "Adolescence"
+  },
+  {
+    "id": 200,
+    "question": "Which of the following spelling is correct?",
+    "options": [
+      "Privilege",
+      "Previlege",
+      "Privilige",
+      "Prevelege"
+    ],
+    "answer": "Privilege"
+  },
+  {
+    "id": 201,
+    "question": "Which one of the following is the opposite word of gentle?",
+    "options": [
+      "Decent",
+      "Modest",
+      "Rude",
+      "Bad"
+    ],
+    "answer": "Rude"
+  },
+  {
+    "id": 202,
+    "question": "‘Cut up’ means",
+    "options": [
+      "discount",
+      "reduce",
+      "dislocate",
+      "separate"
+    ],
+    "answer": "separate"
+  },
+  {
+    "id": 203,
+    "question": "What is the antonym of the word ‘contaminate’",
+    "options": [
+      "Sanctity",
+      "Invigorate",
+      "Taint",
+      "Purity"
+    ],
+    "answer": "Purity"
+  },
+  {
+    "id": 204,
+    "question": "What is the antonym of 'conspicuous'?",
+    "options": [
+      "obscure",
+      "conscious",
+      "obvious",
+      "remarkable"
+    ],
+    "answer": "obscure"
+  },
+  {
+    "id": 205,
+    "question": "'Lingua Franca' means the",
+    "options": [
+      "international language",
+      "first language",
+      "common language",
+      "None of these"
+    ],
+    "answer": "common language"
+  },
+  {
+    "id": 206,
+    "question": "Meaning of the idiom 'Bottom line' is—",
+    "options": [
+      "The final step",
+      "The end of a point",
+      "The last line of the book",
+      "The essential point"
+    ],
+    "answer": "The essential point"
+  },
+  {
+    "id": 207,
+    "question": "The phrase 'in black and white' means—",
+    "options": [
+      "in writing",
+      "with black and white colour",
+      "face to face",
+      "combination of black and white"
+    ],
+    "answer": "in writing"
+  },
+  {
+    "id": 208,
+    "question": "He is the black sheep in the family. Here 'black sheep' means—",
+    "options": [
+      "a clever person",
+      "an irritating person",
+      "a noble persons",
+      "an unworthy person"
+    ],
+    "answer": "an unworthy person"
+  },
+  {
+    "id": 209,
+    "question": "Choose the correct spelling:",
+    "options": [
+      "Repetation",
+      "Repetation",
+      "Repetation",
+      "Repetition"
+    ],
+    "answer": "Repetition"
+  },
+  {
+    "id": 210,
+    "question": "The correct spelling is:",
+    "options": [
+      "Condem",
+      "condem",
+      "condemn",
+      "condemne"
+    ],
+    "answer": "condemn"
+  },
+  {
+    "id": 211,
+    "question": "A society in one where many languages are spoken:",
+    "options": [
+      "unilateral",
+      "multilateral",
+      "unilingual",
+      "multilingual"
+    ],
+    "answer": "multilingual"
+  },
+  {
+    "id": 212,
+    "question": "A violation of grammatical manners is called:",
+    "options": [
+      "Jargon",
+      "Colloquial",
+      "Slang",
+      "Solecism"
+    ],
+    "answer": "Solecism"
+  },
+  {
+    "id": 213,
+    "question": "A museum is a good collection of...",
+    "options": [
+      "relics",
+      "historical",
+      "resource",
+      "tourists"
+    ],
+    "answer": "relics"
+  },
+  {
+    "id": 214,
+    "question": "One learns to grow food by ---",
+    "options": [
+      "cultivation",
+      "planning",
+      "study",
+      "dancing"
+    ],
+    "answer": "cultivation"
+  }
+]
