@@ -138,7 +138,7 @@ function loadWelcome() {
         { id: 'previous', title: 'Previous Questions', description: 'Bank & BCS vocabulary from last 15 years.', bn_description: 'বিগত ১৫ বছরের ব্যাংক ও বিসিএস পরীক্ষার প্রশ্ন থেকে বাছাইকৃত শব্দভাণ্ডার।', icon: 'history', color: 'text-purple-500' },
         { id: 'recentgk', title: 'Recent GK', description: 'Daily general knowledge updates from newspapers.', bn_description: 'সাম্প্রতিক সাধারণ জ্ঞানের নিয়মিত আপডেট।', icon: 'globe-2', color: 'text-sky-500' },
         { id: 'noblePrize2025', title: 'Noble Prize 2025', description: 'Test your knowledge about the Noble Prize 2025 winners.', bn_description: 'নোবেল পুরস্কার 2025 বিজয়ীদের সম্পর্কে আপনার জ্ঞান পরীক্ষা করুন।', icon: 'award', color: 'text-amber-500' },
-        { id: 'vocab2025', title: '2025 Vocab', description: 'A new set of vocabulary for 2025.', bn_description: '2025 সালের জন্য নতুন শব্দভান্ডার।', icon: 'book-open', color: 'text-green-500' }
+        { id: 'vocab2025', title: '2025 Vocab', description: 'Previous questions from 2025.', bn_description: '2025 সালের পূর্ববর্তী প্রশ্ন।', icon: 'book-open', color: 'text-green-500' }
     ];
 
     categories.forEach(cat => {
@@ -188,7 +188,8 @@ function loadWelcome() {
         
         card.addEventListener('click', () => {
             currentCategory = cat.id;
-            if (cat.id === 'recentgk' || cat.id === 'noblePrize2025') {
+            if (cat.id === 'recentgk' || cat.id === 'noblePrize2025' || cat.id === 'vocab2025') {
+                document.getElementById('recentgk-title').textContent = vocabData[cat.id].title;
                 document.getElementById('recentgk-total-questions').textContent = `${totalCount} Questions Available`;
                 showSection('recentgk');
             } else {
@@ -334,7 +335,7 @@ function loadQuestion() {
     card.classList.add('question-slide-in');
 
     // --- GK Logic ---
-    if (currentCategory === 'recentgk' || currentCategory === 'noblePrize2025') {
+    if (currentCategory === 'recentgk' || currentCategory === 'noblePrize2025' || currentCategory === 'vocab2025') {
         quizQuestion.textContent = '';
         quizQuestionBengali.textContent = currentItem.question;
         const options = [...currentItem.options]; 
@@ -493,7 +494,7 @@ function checkAnswer(selectedButton) {
         
         // Distinguish between GK and Vocab for correct answer display
         let correctAnswerText;
-        if (currentCategory === 'recentgk' || currentCategory === 'noblePrize2025') {
+        if (currentCategory === 'recentgk' || currentCategory === 'noblePrize2025' || currentCategory === 'vocab2025') {
             correctAnswerText = currentWord.answer;
         } else {
             correctAnswerText = currentWord.english 
@@ -577,7 +578,7 @@ function showQuizComplete() {
 
     if (missedWords.length > 0) {
         wordsToReviewList.innerHTML = missedWords.map(item => {
-            if (currentCategory === 'recentgk' || currentCategory === 'noblePrize2025') {
+            if (currentCategory === 'recentgk' || currentCategory === 'noblePrize2025' || currentCategory === 'vocab2025') {
                 return `
                 <div class="bg-white dark:bg-slate-900/50 p-4 rounded-xl border-l-4 border-red-500 shadow-sm">
                     <h4 class="font-bold text-slate-800 dark:text-slate-200 mb-2 text-base lang-bn">${item.question}</h4>
@@ -607,7 +608,7 @@ function showQuizComplete() {
     }
     
     // "Continue" Button logic
-     if (currentCategory === 'recentgk' || currentCategory === 'special' || currentCategory === 'noblePrize2025') {
+     if (currentCategory === 'recentgk' || currentCategory === 'special' || currentCategory === 'noblePrize2025' || currentCategory === 'vocab2025') {
         continueButton.textContent = "Back to Categories";
     } else {
         const nextChunkIndex = catData.currentChunkIndex + 1;
@@ -624,7 +625,7 @@ function showQuizComplete() {
 
 function continueToNext() {
     const catData = vocabData[currentCategory];
-    if (currentCategory === 'recentgk' || currentCategory === 'special' || currentCategory === 'noblePrize2025') {
+    if (currentCategory === 'recentgk' || currentCategory === 'special' || currentCategory === 'noblePrize2025' || currentCategory === 'vocab2025') {
         loadWelcome();
         return;
     }
@@ -1040,3 +1041,4 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.body.innerHTML = `<div class="text-red-500 text-center p-8">Failed to load app data. <br><small>${error.message}</small></div>`;
     }
 });
+
