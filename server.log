@@ -1,7 +1,0 @@
-127.0.0.1 - - [16/Nov/2025 06:32:49] "GET /index.html HTTP/1.1" 200 -
-127.0.0.1 - - [16/Nov/2025 06:32:49] "GET /style.css HTTP/1.1" 200 -
-127.0.0.1 - - [16/Nov/2025 06:32:49] "GET /script.js HTTP/1.1" 200 -
-127.0.0.1 - - [16/Nov/2025 06:32:49] "GET /vocabulary.json HTTP/1.1" 200 -
-127.0.0.1 - - [16/Nov/2025 06:32:49] "GET /noble-prize-2025.json HTTP/1.1" 200 -
-127.0.0.1 - - [16/Nov/2025 06:32:49] "GET /recentgk.json HTTP/1.1" 200 -
-127.0.0.1 - - [16/Nov/2025 06:32:49] "GET /pre-vocabulary.json HTTP/1.1" 200 -

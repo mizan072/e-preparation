@@ -2,6 +2,7 @@
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', sans-serif;
 }
 
 .font-bengali {
@@ -388,10 +389,21 @@ body {
     #test-section .max-w-2xl {
         padding-left: 0;
         padding-right: 0;
+        height: calc(100vh - 5rem); /* Full height minus header */
+        display: flex;
+        flex-direction: column;
     }
 
-    #test-section .bg-white {
+    #test-section .bg-white.dark\\:bg-slate-800\\.50 {
+        flex-shrink: 0; /* Progress bar container */
+    }
+
+    #test-section .bg-white.dark\\:bg-slate-800 {
         border-radius: 0;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto; /* Allow scrolling for the main content */
     }
 
     #quiz-question, #quiz-question-bengali {
@@ -399,16 +411,21 @@ body {
         line-height: 2rem; /* 32px */
     }
 
-    #test-section .p-8 {
+    #test-section .p-8.sm\\:p-10 {
         padding: 1.5rem; /* 24px */
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    #test-section .min-h-\[14rem\] {
-        min-height: 10rem; /* 160px */
+    #test-section .min-h-\\[14rem\\] {
+        min-height: 10rem; /* Give it some min-height back */
     }
 
     #quiz-options-container {
         padding: 1rem;
+        flex-shrink: 0;
     }
 
     .option-card span {
@@ -418,7 +435,20 @@ body {
     #next-question-button {
         padding-top: 1rem;
         padding-bottom: 1rem;
-        font-size: 1rem; /* 16px */
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+
+    #test-section .mt-8 {
+        margin-top: auto; /* Pushes the button to the bottom */
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, 0.8);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        border-top: 1px solid #e2e8f0;
+    }
+    .dark #test-section .mt-8 {
+        background-color: rgba(30, 41, 59, 0.8);
+        border-color: #334155;
     }
 }
-
