@@ -4,6 +4,7 @@ const SAVE_KEY_WORDS_GRE = 'eprepGreWords';
 const SAVE_KEY_WORDS_PREVIOUS = 'eprepPreviousWords';
 const SAVE_KEY_WORDS_RECENTGK = 'eprepRecentGkWords';
 const SAVE_KEY_WORDS_NOBLE_PRIZE_2025 = 'eprepNoblePrize2025';
+const SAVE_KEY_WORDS_2025VOCAB = 'eprep2025Vocab';
 const DARK_MODE_KEY = 'eprepDarkMode';
 const STUDY_HISTORY_KEY = 'eprepStudyHistory';
 
@@ -11,7 +12,8 @@ let vocabData = {
     gre: { list: [], words: [] },
     previous: { list: [], words: [] },
     recentgk: { list: [], words: [] },
-    noblePrize2025: { list: [], words: [] }
+    noblePrize2025: { list: [], words: [] },
+    vocab2025: { list: [], words: [] }
 };
 
 let currentCategory = 'gre'; 
@@ -135,7 +137,8 @@ function loadWelcome() {
         { id: 'gre', title: 'GRE 333', description: 'The essential 333 high-frequency words for the GRE.', bn_description: 'চাকরির পরীক্ষার জন্য অপরিহার্য ৩৩৩টি হাই-ফ্রিকোয়েন্সি ইংরেজি শব্দ।', icon: 'graduation-cap', color: 'text-blue-500' },
         { id: 'previous', title: 'Previous Questions', description: 'Bank & BCS vocabulary from last 15 years.', bn_description: 'বিগত ১৫ বছরের ব্যাংক ও বিসিএস পরীক্ষার প্রশ্ন থেকে বাছাইকৃত শব্দভাণ্ডার।', icon: 'history', color: 'text-purple-500' },
         { id: 'recentgk', title: 'Recent GK', description: 'Daily general knowledge updates from newspapers.', bn_description: 'সাম্প্রতিক সাধারণ জ্ঞানের নিয়মিত আপডেট।', icon: 'globe-2', color: 'text-sky-500' },
-        { id: 'noblePrize2025', title: 'Noble Prize 2025', description: 'Test your knowledge about the Noble Prize 2025 winners.', bn_description: 'নোবেল পুরস্কার 2025 বিজয়ীদের সম্পর্কে আপনার জ্ঞান পরীক্ষা করুন।', icon: 'award', color: 'text-amber-500' }
+        { id: 'noblePrize2025', title: 'Noble Prize 2025', description: 'Test your knowledge about the Noble Prize 2025 winners.', bn_description: 'নোবেল পুরস্কার 2025 বিজয়ীদের সম্পর্কে আপনার জ্ঞান পরীক্ষা করুন।', icon: 'award', color: 'text-amber-500' },
+        { id: 'vocab2025', title: '2025 Vocab', description: 'A new set of vocabulary for 2025.', bn_description: '2025 সালের জন্য নতুন শব্দভান্ডার।', icon: 'book-open', color: 'text-green-500' }
     ];
 
     categories.forEach(cat => {
@@ -641,6 +644,7 @@ function getSaveKey(category) {
     if (category === 'previous') return SAVE_KEY_WORDS_PREVIOUS;
     if (category === 'recentgk') return SAVE_KEY_WORDS_RECENTGK;
     if (category === 'noblePrize2025') return SAVE_KEY_WORDS_NOBLE_PRIZE_2025;
+    if (category === 'vocab2025') return SAVE_KEY_WORDS_2025VOCAB;
     return null;
 }
 
@@ -941,17 +945,19 @@ function startTestMode() {
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const [greResponse, preVocabResponse, recentGkResponse, noblePrize2025Response] = await Promise.all([
+        const [greResponse, preVocabResponse, recentGkResponse, noblePrize2025Response, vocab2025Response] = await Promise.all([
             fetch('vocabulary.json'),
             fetch('pre-vocabulary.json'),
             fetch('recentgk.json'),
-            fetch('noble-prize-2025.json')
+            fetch('noble-prize-2025.json'),
+            fetch('2025vocab.json')
         ]);
         
         if (!greResponse.ok) throw new Error(`Failed to load vocabulary.json`);
         if (!preVocabResponse.ok) throw new Error(`Failed to load pre-vocabulary.json`);
         if (!recentGkResponse.ok) throw new Error(`Failed to load recentgk.json`);
         if (!noblePrize2025Response.ok) throw new Error(`Failed to load noble-prize-2025.json`);
+        if (!vocab2025Response.ok) throw new Error(`Failed to load 2025vocab.json`);
         
         vocabData.gre.list = await greResponse.json();
         vocabData.gre.title = "GRE 333";
@@ -961,6 +967,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         vocabData.recentgk.title = "Recent GK";
         vocabData.noblePrize2025.list = await noblePrize2025Response.json();
         vocabData.noblePrize2025.title = "Noble Prize 2025";
+        vocabData.vocab2025.list = await vocab2025Response.json();
+        vocabData.vocab2025.title = "2025 Vocab";
 
         loadDarkModeState();
         loadProgress();
@@ -1032,4 +1040,3 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.body.innerHTML = `<div class="text-red-500 text-center p-8">Failed to load app data. <br><small>${error.message}</small></div>`;
     }
 });
-
